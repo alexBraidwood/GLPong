@@ -4,6 +4,7 @@
 
 #include "Renderer.h"
 #include <fstream>
+#include <sstream>
 
 GLfloat vertices[] = {
   -0.5f, -0.5f, 0.0f,
@@ -38,29 +39,45 @@ void Renderer::init() {
 
     glViewport(0, 0, 800, 600);
 
-    GLuint VBO;
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    GLuint vertex_shader;
-    vertex_shader = glCreateShader(GL_VERTEX_SHADER);
-
-    auto vertex_shader_source = load_shader("Shaders/vertex_shader.glsl");
-    auto vertex_shader_cstring = vertex_shader_source.c_str();
-    int vertex_shader_length = vertex_shader_source.length();
-
-    glShaderSource(vertex_shader, 1, &vertex_shader_cstring, &vertex_shader_length);
-    glCompileShader(vertex_shader);
-
+    /* TODO(Alex): This all needs to be moved to other functions */
+    auto vertex_shader = compile_shader("Shaders/vertex_shader.glsl", GL_VERTEX_SHADER, 1);
     std::cout << shader_compilation_result(vertex_shader) << std::endl;
+
+    auto fragment_shader = compile_shader("Shaders/fragment_shader.glsl", GL_FRAGMENT_SHADER, 1);
+    std::cout << shader_compilation_result(fragment_shader) << std::endl;
+
+    shader_program_ = glCreateProgram();
+    glAttachShader(shader_program_, vertex_shader);
+    glAttachShader(shader_program_, fragment_shader);
+    glLinkProgram(shader_program_);
+
+    glDeleteShader(vertex_shader);
+    glDeleteShader(fragment_shader);
+
+    glGenVertexArrays(1, &VAO_);
+    glGenBuffers(1, &VBO_);
+    glBindVertexArray(VAO_);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO_);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+
 }
 
-GLuint Renderer::compile_shader(std::string shader, ) const {
-    auto shader_source = load_shader(shader);
+GLuint Renderer::compile_shader(std::string shader_file, GLenum shader_type, int element_count) const {
+    GLuint shader;
+    shader = glCreateShader(shader_type);
+
+    auto shader_source = load_shader(shader_file);
     auto shader_cstring = shader_source.c_str();
     int shader_length = shader_source.length();
-    glShaderSource()
+
+    glShaderSource(shader, element_count, &shader_cstring, &shader_length);
+    glCompileShader(shader);
+
+    return shader;
 }
 
 std::string Renderer::shader_compilation_result(const GLuint shader) const {
@@ -80,19 +97,16 @@ std::string Renderer::shader_compilation_result(const GLuint shader) const {
 
 std::string Renderer::load_shader(const std::string& shader_location) const {
     std::ifstream input(shader_location);
+    std::string result;
 
     if (false == input.is_open()) {
         return "Couldn't Open File";
     }
 
-    std::string result;
-
-    // Reserve the size of the file
     input.seekg(0, std::ios::end);
     result.reserve(input.tellg());
     input.seekg(0, std::ios::beg);
 
-    // Assign the file contents to the string
     result.assign((std::istreambuf_iterator<char>(input)),
                     std::istreambuf_iterator<char>());
 
@@ -104,6 +118,14 @@ GLFWwindow* Renderer::window() const {
 }
 
 void Renderer::update() {
+
+    glUseProgram(shader_program_);
+
+    /* TODO(Alex): Probably easiest part to abstract */
+    glBindVertexArray(VAO_);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glBindVertexArray(0);
+
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     glfwSwapBuffers(window_);

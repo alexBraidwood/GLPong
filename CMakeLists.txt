@@ -27,7 +27,10 @@ if (GLEW_FOUND)
 endif(GLEW_FOUND)
 
 file(MAKE_DIRECTORY Shaders)
-file(COPY Shaders/vertex_shader.glsl
+
+file(COPY
+Shaders/vertex_shader.glsl
+Shaders/fragment_shader.glsl
 DESTINATION Shaders)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")

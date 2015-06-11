@@ -23,12 +23,15 @@ public:
     void init();
     void update();
 
-    GLuint compile_shader(std::string shader) const;
+    GLuint compile_shader(std::string shader, GLenum shader_type, int element_count) const;
     std::string load_shader(const std::string& shader_location) const;
     std::string shader_compilation_result(const GLuint shader) const;
 
 private:
     GLFWwindow* window_;
+    GLuint shader_program_;
+    GLuint VAO_;
+    GLuint VBO_;
 
 };
 
