@@ -7,6 +7,7 @@
 
 #include <functional>
 #include <memory>
+#include <SDL.h>
 #include <GLFW/glfw3.h>
 #include <map>
 #include <iostream>

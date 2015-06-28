@@ -39,7 +39,6 @@ void Renderer::init() {
 
     glViewport(0, 0, 800, 600);
 
-    /* TODO(Alex): This all needs to be moved to other functions */
     auto vertex_shader = compile_shader("Shaders/vertex_shader.glsl", GL_VERTEX_SHADER, 1);
     std::cout << shader_compilation_result(vertex_shader) << std::endl;
 
@@ -119,15 +118,15 @@ GLFWwindow* Renderer::window() const {
 
 void Renderer::update() {
 
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
     glUseProgram(shader_program_);
 
-    /* TODO(Alex): Probably easiest part to abstract */
     glBindVertexArray(VAO_);
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glBindVertexArray(0);
 
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
     glfwSwapBuffers(window_);
 }
 

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(prototype_action)
 
 include_directories(/usr/include/GLFW)
+include_directories(/usr/include/SDL2)
 
 find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
@@ -38,4 +39,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES main.cpp)
 
 add_executable(prototype_action ${SOURCES})
-target_link_libraries(prototype_action glfw ${OPENGL_LIBRARY} ${GLFW_LIBRARIES})
+target_link_libraries(prototype_action glfw ${OPENGL_LIBRARY} ${GLFW_LIBRARIES} ${SDL2_LIBRARIES})
