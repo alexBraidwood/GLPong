@@ -2,30 +2,30 @@ cmake_minimum_required(VERSION 3.2)
 project(prototype_action)
 
 include_directories(/usr/include/GLFW)
-include_directories(/usr/include/SDL2)
+include_directories(include)
 
-find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
 
 set(SOURCES
-main.cpp
-Components/GraphicsComponent.cpp
-Components/GraphicsComponent.h
-Renderer.cpp
-Renderer.h
-Game.cpp
-Game.h
-InputHandler.cpp
-InputHandler.h)
+src/main.cpp
+src/GraphicsComponent.cpp
+src/Renderer.cpp
+src/Game.cpp
+src/InputHandler.cpp
+src/glew/glew.c
+src/glew/glewinfo.c
+src/glew/visualinfo.c
+include/Graphics/glew.h
+include/Graphics/glxew.h
+include/Graphics/wglew.h
+include/Components/GraphicsComponent.h
+include/Renderer.h
+include/Game.h
+include/InputHandler.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
 endif(OpenGL_FOUND)
-
-if (GLEW_FOUND)
-    include_directories(${GLEW_INCLUDE_DIRS})
-    link_libraries(${GLEW_LIBRARIES})
-endif(GLEW_FOUND)
 
 file(MAKE_DIRECTORY Shaders)
 

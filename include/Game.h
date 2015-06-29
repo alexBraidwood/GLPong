@@ -18,7 +18,7 @@ public:
 public:
 
 private:
-    static void input_callback_ (GLFWwindow*, int, int, int, int);
+    //static void input_callback_ (GLFWwindow*, int, int, int, int);
     static std::shared_ptr<InputHandler> input_handler_;
 
     std::shared_ptr<Renderer> renderer_;

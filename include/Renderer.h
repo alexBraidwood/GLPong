@@ -11,15 +11,15 @@
 
 #define GLEW_STATIC
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <Graphics/glew.h>
+#include <SDL/SDL.h>
 
 class Renderer final {
 public:
     explicit Renderer();
     ~Renderer() = default;
 
-    GLFWwindow* window() const;
+    SDL_Window* window() const;
     void init();
     void update();
 
@@ -28,7 +28,7 @@ public:
     std::string shader_compilation_result(const GLuint shader) const;
 
 private:
-    GLFWwindow* window_;
+    SDL_Window* window_;
     GLuint shader_program_;
     GLuint VAO_;
     GLuint VBO_;
