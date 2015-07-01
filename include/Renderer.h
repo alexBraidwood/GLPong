@@ -12,6 +12,8 @@
 #include <GL/gl.h>
 #include "GLWindow.h"
 
+#include <Graphics/glew.h>
+#include <SDL/SDL.h>
 
 class Renderer final {
 public:
