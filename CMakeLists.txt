@@ -1,31 +1,45 @@
 cmake_minimum_required(VERSION 3.2)
 project(prototype_action)
 
-include_directories(/usr/include/GLFW)
-include_directories(/usr/include/SDL2)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${prototype_action_SOURCE_DIR}/cmake")
 
-find_package(GLEW REQUIRED)
+find_package(SDL2 REQUIRED)
 find_package(OpenGL REQUIRED)
 
+include_directories(include)
+
+if (WIN32)
+    include_directories(SDL2/i686-w64-mingw32/include/SDL2)
+    set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
+    link_directories(SDL2/i686-w64-mingw32/lib)
+    set(LINK_OPTIONS mingw32 SDL2Main SDL2)
+    add_definitions(-DGLEW_STATIC)
+else()
+    include_directories(/usr/include/SDL2)
+    set(LINK_OPTIONS SDL2)
+endif()
+
+
 set(SOURCES
-main.cpp
-Components/GraphicsComponent.cpp
-Components/GraphicsComponent.h
-Renderer.cpp
-Renderer.h
-Game.cpp
-Game.h
-InputHandler.cpp
-InputHandler.h)
+src/main.cpp
+src/GraphicsComponent.cpp
+src/Renderer.cpp
+src/Game.cpp
+src/InputHandler.cpp
+src/glew/glew.c
+src/GLWindow.cpp
+include/GLWindow.h
+include/GL/glew.h
+include/GL/glxew.h
+include/GL/wglew.h
+include/Components/GraphicsComponent.h
+include/Renderer.h
+include/Game.h
+include/InputHandler.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
 endif(OpenGL_FOUND)
-
-if (GLEW_FOUND)
-    include_directories(${GLEW_INCLUDE_DIRS})
-    link_libraries(${GLEW_LIBRARIES})
-endif(GLEW_FOUND)
 
 file(MAKE_DIRECTORY Shaders)
 
@@ -34,9 +48,15 @@ Shaders/vertex_shader.glsl
 Shaders/fragment_shader.glsl
 DESTINATION Shaders)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+file(COPY
+${BINARIES}
+DESTINATION /)
 
-set(SOURCE_FILES main.cpp)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 add_executable(prototype_action ${SOURCES})
-target_link_libraries(prototype_action glfw ${OPENGL_LIBRARY} ${GLFW_LIBRARIES} ${SDL2_LIBRARIES})
+if (WIN32)
+    target_link_libraries(prototype_action ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
+else()
+    target_link_libraries(prototype_action ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
+endif()
