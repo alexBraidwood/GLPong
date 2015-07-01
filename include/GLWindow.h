@@ -10,7 +10,6 @@
 
 namespace sdl2 {
 
-
     struct SDLWindowDestroyer
     {
         void operator()(SDL_Window* w) const
