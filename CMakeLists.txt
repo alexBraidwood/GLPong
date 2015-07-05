@@ -28,6 +28,10 @@ src/Game.cpp
 src/InputHandler.cpp
 src/glew/glew.c
 src/GLWindow.cpp
+src/Event.cpp
+src/Observer.cpp
+include/Observer.h
+include/Event.h
 include/GLWindow.h
 include/GL/glew.h
 include/GL/glxew.h
@@ -54,7 +58,7 @@ DESTINATION /)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_executable(prototype_action ${SOURCES})
+add_executable(prototype_action ${SOURCES} )
 if (WIN32)
     target_link_libraries(prototype_action ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
 else()

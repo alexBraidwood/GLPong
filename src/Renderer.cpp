@@ -6,6 +6,8 @@
 #include <fstream>
 #include <sstream>
 
+using namespace engine;
+
 GLfloat vertices[] = {
   -0.5f, -0.5f, 0.0f,
   0.5f, -0.5f, 0.0f,
@@ -14,27 +16,15 @@ GLfloat vertices[] = {
 
 Renderer::Renderer()
 {
-    init();
+    Init();
 }
 
-void Renderer::init()
+void Renderer::Init()
 {
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 
-    window_ = std::make_shared<sdl2::GLWindow>();
-//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-//    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-//    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-
-//    window_ = glfwCreateWindow(800, 600, "LearnOpenGL", nullptr, nullptr);
-//    if (window_ == nullptr) {
-//        std::cout << "Failed to create GLFW window" << std::endl;
-//        glfwTerminate();
-//        return;
-//    }
-//    glfwMakeContextCurrent(window_);
+    window_ = std::make_unique<sdl2::GLWindow>();
 
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK) {
@@ -44,11 +34,11 @@ void Renderer::init()
 
     glViewport(0, 0, 800, 600);
 
-    auto vertex_shader = compile_shader("Shaders/vertex_shader.glsl", GL_VERTEX_SHADER, 1);
-    std::cout << shader_compilation_result(vertex_shader) << std::endl;
+    auto vertex_shader = CompileShader("Shaders/vertex_shader.glsl", GL_VERTEX_SHADER, 1);
+    std::cout << ShaderCompilationResult(vertex_shader) << std::endl;
 
-    auto fragment_shader = compile_shader("Shaders/fragment_shader.glsl", GL_FRAGMENT_SHADER, 1);
-    std::cout << shader_compilation_result(fragment_shader) << std::endl;
+    auto fragment_shader = CompileShader("Shaders/fragment_shader.glsl", GL_FRAGMENT_SHADER, 1);
+    std::cout << ShaderCompilationResult(fragment_shader) << std::endl;
 
     shader_program_ = glCreateProgram();
     glAttachShader(shader_program_, vertex_shader);
@@ -70,12 +60,12 @@ void Renderer::init()
 
 }
 
-GLuint Renderer::compile_shader(std::string shader_file, GLenum shader_type, int element_count) const
+GLuint Renderer::CompileShader(std::string shader_file, GLenum shader_type, int element_count) const
 {
     GLuint shader;
     shader = glCreateShader(shader_type);
 
-    auto shader_source = load_shader(shader_file);
+    auto shader_source = LoadShader(shader_file);
     auto shader_cstring = shader_source.c_str();
     int shader_length = shader_source.length();
 
@@ -85,7 +75,7 @@ GLuint Renderer::compile_shader(std::string shader_file, GLenum shader_type, int
     return shader;
 }
 
-std::string Renderer::shader_compilation_result(const GLuint shader) const
+std::string Renderer::ShaderCompilationResult(const GLuint shader) const
 {
     GLint success;
     GLchar infoLog[512];
@@ -101,7 +91,7 @@ std::string Renderer::shader_compilation_result(const GLuint shader) const
     return "Success";
 }
 
-std::string Renderer::load_shader(const std::string& shader_location) const
+std::string Renderer::LoadShader(const std::string& shader_location) const
 {
     std::ifstream input(shader_location);
     std::string result;
@@ -120,23 +110,19 @@ std::string Renderer::load_shader(const std::string& shader_location) const
     return result;
 }
 
-std::shared_ptr<sdl2::GLWindow> Renderer::window() const
+void Renderer::Update()
 {
-    return window_;
-}
-
-void Renderer::update()
-{
-
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-
     glUseProgram(shader_program_);
-
     glBindVertexArray(VAO_);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+
+    while(false == window_->Quit()) {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        window_->Update();
+    }
+
     glBindVertexArray(0);
 
-//    glfwSwapBuffers(window_);
 }
 

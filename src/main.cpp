@@ -1,9 +1,10 @@
 #include "Game.h"
-#include <SDL.h>
 
-int main(int argc, char* argv[]) {
-    Game g;
-    g.update();
+int main(int argc, char* argv[])
+{
+
+    engine::Game g;
+    g.Update();
 
     return 0;
 }

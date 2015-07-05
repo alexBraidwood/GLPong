@@ -4,9 +4,8 @@
 
 #include "GLWindow.h"
 #include <iostream>
-#include <bits/unique_ptr.h>
 
-using namespace sdl2;
+using namespace engine::sdl2;
 
 GLWindow::GLWindow() {
     loaded_successfully_ = true;
@@ -32,10 +31,29 @@ GLWindow::GLWindow() {
 
 GLWindow::~GLWindow()
 {
+    // TODO(): I need a better home, destroy me in a smarter way
     SDL_GL_DeleteContext(sdl_gl_context_);
 }
 
 SDL_GLContext GLWindow::sdl_gl_context()
 {
     return sdl_gl_context_;
+}
+
+void GLWindow::Update()
+{
+    SDL_GL_SwapWindow(sdl_window_.get());
+}
+
+bool GLWindow::Quit()
+{
+    SDL_Event e;
+
+    SDL_PollEvent(&e);
+    switch (e.type) {
+        case SDL_QUIT:
+            return true;
+    }
+
+    return false;
 }

@@ -11,7 +11,8 @@
 #include <map>
 #include <iostream>
 
-class InputHandler {
+class InputHandler
+{
 public:
     InputHandler();
 

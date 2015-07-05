@@ -3,9 +3,20 @@
 //
 
 #include "Game.h"
-#include <iostream>
 
-std::shared_ptr<InputHandler> Game::input_handler_ = std::shared_ptr<InputHandler>(new InputHandler);
+using namespace engine;
+
+Game::Game()
+{
+    renderer_ = std::make_shared<Renderer>();
+}
+
+void Game::Update()
+{
+    // When do we close the window?
+    // I have no idea, yet, let the renderer decide
+    renderer_->Update();
+}
 
 //void Game::input_callback_(GLFWwindow* window, int key, int scancode, int action, int mode) {
 //    std::cout << "Calling Callback" << std::endl;
@@ -18,20 +29,3 @@ std::shared_ptr<InputHandler> Game::input_handler_ = std::shared_ptr<InputHandle
 //        Game::input_handler_->key_released(key);
 //    }
 //}
-
-Game::Game()
-    : renderer_(new Renderer)
-{
-//    glfwSetKeyCallback(renderer_->window(), Game::input_callback_);
-}
-
-void Game::update() {
-//    while (false == glfwWindowShouldClose(renderer_->window())) {
-//        Game::input_handler_->update();
-//        renderer_->update();
-//
-//        if (Game::input_handler_->is_key_down(GLFW_KEY_ESCAPE)) {
-//            glfwSetWindowShouldClose(renderer_->window(), GL_TRUE);
-//        }
-//    }
-}

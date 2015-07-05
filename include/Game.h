@@ -2,24 +2,26 @@
 // Created by alex on 6/8/15.
 //
 
-#ifndef PROTOTYPE_ACTION_GAME_H
-#define PROTOTYPE_ACTION_GAME_H
+#pragma once
 
 #include "Renderer.h"
 #include "InputHandler.h"
 
-class Game {
-public:
-    Game();
-    void update();
+namespace engine
+{
 
-public:
+    class Game
+    {
+    public:
+        Game();
 
-private:
-    //static void input_callback_ (GLFWwindow*, int, int, int, int);
-    static std::shared_ptr<InputHandler> input_handler_;
+        void Update();
 
-    std::shared_ptr<Renderer> renderer_;
-};
+    public:
 
-#endif //PROTOTYPE_ACTION_GAME_H
+    private:
+        InputHandler input_handler_;
+        std::shared_ptr<Renderer> renderer_;
+    };
+}
+
