@@ -5,9 +5,15 @@
 #pragma once
 
 
-class Observer
-{
+#include "Event.h"
 
-};
+namespace engine
+{
+    class Observer
+    {
+    public:
+        virtual void EventOccured(std::shared_ptr<Event> event);
+    };
+}
 
 

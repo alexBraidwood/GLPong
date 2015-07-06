@@ -25,11 +25,13 @@ src/main.cpp
 src/GraphicsComponent.cpp
 src/Renderer.cpp
 src/Game.cpp
-src/InputHandler.cpp
 src/glew/glew.c
 src/GLWindow.cpp
-src/Event.cpp
 src/Observer.cpp
+src/SdlKeyEvent.cpp
+include/ListenerType.h
+include/EventType.h
+include/SdlKeyEvent.h
 include/Observer.h
 include/Event.h
 include/GLWindow.h
@@ -38,8 +40,7 @@ include/GL/glxew.h
 include/GL/wglew.h
 include/Components/GraphicsComponent.h
 include/Renderer.h
-include/Game.h
-include/InputHandler.h)
+include/Game.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
@@ -58,7 +59,7 @@ DESTINATION /)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_executable(prototype_action ${SOURCES} )
+add_executable(prototype_action ${SOURCES})
 if (WIN32)
     target_link_libraries(prototype_action ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
 else()

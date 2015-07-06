@@ -27,6 +27,8 @@ GLWindow::GLWindow() {
             }
         }
     }
+
+    key_event_listener_ = std::make_shared<SdlKeyEvent>();
 }
 
 GLWindow::~GLWindow()
@@ -40,20 +42,24 @@ SDL_GLContext GLWindow::sdl_gl_context()
     return sdl_gl_context_;
 }
 
+std::shared_ptr<SdlKeyEvent> GLWindow::key_event_listener()
+{
+    return key_event_listener_;
+}
+
 void GLWindow::Update()
 {
     SDL_GL_SwapWindow(sdl_window_.get());
-}
-
-bool GLWindow::Quit()
-{
     SDL_Event e;
-
     SDL_PollEvent(&e);
-    switch (e.type) {
+    switch(e.type) {
         case SDL_QUIT:
-            return true;
+            break;
+        case SDL_KEYDOWN:
+            key_event_listener_->last_key_pressed(e.key.keysym.sym);
+            break;
+        case SDL_KEYUP:
+            key_event_listener_->last_key_released(e.key.keysym.sym);
+            break;
     }
-
-    return false;
 }

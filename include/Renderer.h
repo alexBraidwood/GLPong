@@ -19,7 +19,7 @@ namespace engine
     {
     public:
         explicit Renderer();
-        ~Renderer() = default;
+        ~Renderer();
         void Init();
         void Update();
 
@@ -28,7 +28,6 @@ namespace engine
         std::string ShaderCompilationResult(const GLuint shader) const;
 
     private:
-        std::unique_ptr<sdl2::GLWindow> window_;
         GLuint shader_program_;
         GLuint VAO_;
         GLuint VBO_;

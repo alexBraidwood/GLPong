@@ -8,24 +8,32 @@ using namespace engine;
 
 Game::Game()
 {
+    window_ = std::make_unique<sdl2::GLWindow>();
     renderer_ = std::make_shared<Renderer>();
+
+    observers_[ListenerType::KeyEventListener] = window_->key_event_listener();
+    is_running = true;
 }
 
 void Game::Update()
 {
-    // When do we close the window?
-    // I have no idea, yet, let the renderer decide
-    renderer_->Update();
+    while (is_running) {
+        // When do we close the window?
+        // I have no idea, yet, let the renderer decide
+        window_->Update();
+        renderer_->Update();
+        if (window_->key_event_listener()->last_key_pressed() == SDLK_ESCAPE) {
+            is_running = false;
+        }
+    }
+}
+void Game::Subscribe(ListenerType type, std::shared_ptr<Observer> observer)
+{
+    observers_[type]->AttachObserver(observer);
 }
 
-//void Game::input_callback_(GLFWwindow* window, int key, int scancode, int action, int mode) {
-//    std::cout << "Calling Callback" << std::endl;
-//
-//    if (action == GLFW_PRESS) {
-//        Game::input_handler_->key_pressed(key);
-//    }
-//
-//    if (action == GLFW_RELEASE) {
-//        Game::input_handler_->key_released(key);
-//    }
-//}
+void Game::Unsubscribe(ListenerType type, std::shared_ptr<Observer> observer)
+{
+    observers_[type]->DetachObserver(observer);
+}
+

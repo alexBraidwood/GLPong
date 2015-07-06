@@ -7,6 +7,7 @@
 #include <memory>
 #include <SDL.h>
 #include <SDL_opengl.h>
+#include "SdlKeyEvent.h"
 
 namespace engine
 {
@@ -28,13 +29,15 @@ namespace engine
             SDL_GLContext sdl_gl_context();
             void Update();
 
-            // This needs to be decided by an observer
-            bool Quit();
+            std::shared_ptr<SdlKeyEvent> key_event_listener();
+
         private:
             std::unique_ptr<SDL_Window, SDLWindowDestroyer> sdl_window_;
             // TODO(): Wrap me up in a data structure, I'm a void pointer on the inside!
             SDL_GLContext sdl_gl_context_;
             bool loaded_successfully_;
+
+            std::shared_ptr<SdlKeyEvent> key_event_listener_;
         };
     }
 }

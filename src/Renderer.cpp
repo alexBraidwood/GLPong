@@ -24,7 +24,6 @@ void Renderer::Init()
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 
-    window_ = std::make_unique<sdl2::GLWindow>();
 
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK) {
@@ -58,6 +57,9 @@ void Renderer::Init()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glUseProgram(shader_program_);
+    glBindVertexArray(VAO_);
 }
 
 GLuint Renderer::CompileShader(std::string shader_file, GLenum shader_type, int element_count) const
@@ -112,17 +114,12 @@ std::string Renderer::LoadShader(const std::string& shader_location) const
 
 void Renderer::Update()
 {
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glUseProgram(shader_program_);
-    glBindVertexArray(VAO_);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+}
 
-    while(false == window_->Quit()) {
-        glClear(GL_COLOR_BUFFER_BIT);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        window_->Update();
-    }
-
+Renderer::~Renderer()
+{
     glBindVertexArray(0);
-
 }
 
