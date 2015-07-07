@@ -12,23 +12,25 @@ if (WIN32)
     include_directories(SDL2/i686-w64-mingw32/include/SDL2)
     set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
     link_directories(SDL2/i686-w64-mingw32/lib)
+    link_directories(SOIL)
     set(LINK_OPTIONS mingw32 SDL2Main SDL2)
     add_definitions(-DGLEW_STATIC)
 else()
     include_directories(/usr/include/SDL2)
+    link_directories(SOIL)
     set(LINK_OPTIONS SDL2)
 endif()
 
 
 set(SOURCES
 src/main.cpp
-src/GraphicsComponent.cpp
-src/Renderer.cpp
-src/Game.cpp
+src/Components/GraphicsComponent.cpp
+src/engine/Renderer.cpp
+src/engine/Game.cpp
 src/glew/glew.c
-src/GLWindow.cpp
-src/Observer.cpp
-src/SdlKeyEvent.cpp
+src/sdl2/GLWindow.cpp
+src/engine/Observer.cpp
+src/sdl2/SdlKeyEvent.cpp
 include/ListenerType.h
 include/EventType.h
 include/SdlKeyEvent.h
@@ -40,7 +42,8 @@ include/GL/glxew.h
 include/GL/wglew.h
 include/Components/GraphicsComponent.h
 include/Renderer.h
-include/Game.h)
+include/Game.h
+include/Graphics/SOIL.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
