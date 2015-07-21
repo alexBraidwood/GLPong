@@ -23,7 +23,8 @@ void SdlKeyEvent::DetachObserver(std::shared_ptr<Observer> observer)
 void SdlKeyEvent::NotifyObservers()
 {
     for (auto observer : observers_) {
-        observer->EventOccured(std::shared_ptr<Event>(this));
+        // TODO(Alex): Implement observer notification
+        // observer->EventUpdate(*this);
     }
 }
 

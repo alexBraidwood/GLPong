@@ -12,7 +12,7 @@ namespace engine
     class Observer
     {
     public:
-        virtual void EventOccured(std::shared_ptr<Event> event);
+        virtual void EventUpdate(const Event& event) = 0;
     };
 }
 
