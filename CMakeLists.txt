@@ -3,10 +3,9 @@ project(prototype_action)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${prototype_action_SOURCE_DIR}/cmake")
 
-find_package(SDL2 REQUIRED)
-find_package(OpenGL REQUIRED)
-
 include_directories(include)
+
+find_package(OpenGL REQUIRED)
 
 if (WIN32)
     include_directories(SDL2/i686-w64-mingw32/include/SDL2)
@@ -16,6 +15,7 @@ if (WIN32)
     set(LINK_OPTIONS mingw32 SDL2Main SDL2)
     add_definitions(-DGLEW_STATIC)
 else()
+    find_package(SDL2 REQUIRED)
     include_directories(/usr/include/SDL2)
     link_directories(SOIL)
     set(LINK_OPTIONS SDL2)
