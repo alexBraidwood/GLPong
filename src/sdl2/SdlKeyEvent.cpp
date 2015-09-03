@@ -9,43 +9,22 @@
 
 using namespace engine::sdl2;
 
-void SdlKeyEvent::AttachObserver(std::shared_ptr<Observer> observer)
+SDL_Keycode SdlKeyEvent::key_pressed() const
 {
-    observers_.push_back(observer);
+    return key_pressed_;
 }
 
-void SdlKeyEvent::DetachObserver(std::shared_ptr<Observer> observer)
+SDL_Keycode SdlKeyEvent::key_released() const
 {
-    auto it = std::find(observers_.begin(), observers_.end(), observer);
-    observers_.erase(it);
+    return key_released_;
 }
 
-void SdlKeyEvent::NotifyObservers()
+void SdlKeyEvent::key_pressed(SDL_Keycode key)
 {
-    for (auto observer : observers_) {
-        // TODO(Alex): Implement observer notification
-        // observer->EventUpdate(*this);
-    }
+    key_pressed_ = key;
 }
 
-SDL_Keycode SdlKeyEvent::last_key_pressed()
+void SdlKeyEvent::key_released(SDL_Keycode key)
 {
-    return last_key_pressed_;
-}
-
-SDL_Keycode SdlKeyEvent::last_key_released()
-{
-    return last_key_released_;
-}
-
-void SdlKeyEvent::last_key_pressed(SDL_Keycode key)
-{
-    last_key_pressed_ = key;
-    NotifyObservers();
-}
-
-void SdlKeyEvent::last_key_released(SDL_Keycode key)
-{
-    last_key_released_ = key;
-    NotifyObservers();
+    key_released_ = key;
 }

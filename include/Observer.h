@@ -4,15 +4,16 @@
 
 #pragma once
 
-
-#include "Event.h"
-
 namespace engine
 {
+    template <typename T>
+    class Subject;
+
+    template <typename T>
     class Observer
     {
     public:
-        virtual void EventUpdate(const Event& event) = 0;
+        virtual void Update(const Subject<T>& event) = 0;
     };
 }
 

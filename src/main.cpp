@@ -2,7 +2,6 @@
 
 int main(int argc, char* argv[])
 {
-
     engine::Game g;
     g.Update();
 

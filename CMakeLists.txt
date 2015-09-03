@@ -23,27 +23,26 @@ endif()
 
 
 set(SOURCES
-src/main.cpp
-src/Components/GraphicsComponent.cpp
-src/engine/Renderer.cpp
-src/engine/Game.cpp
-src/glew/glew.c
-src/sdl2/GLWindow.cpp
-src/engine/Observer.cpp
-src/sdl2/SdlKeyEvent.cpp
-include/ListenerType.h
-include/EventType.h
-include/SdlKeyEvent.h
-include/Observer.h
-include/Event.h
-include/GLWindow.h
-include/GL/glew.h
-include/GL/glxew.h
-include/GL/wglew.h
-include/Components/GraphicsComponent.h
-include/Renderer.h
-include/Game.h
-include/Graphics/SOIL.h)
+    src/main.cpp
+    src/Components/GraphicsComponent.cpp
+    src/engine/Renderer.cpp
+    src/engine/Game.cpp
+    src/glew/glew.c
+    src/sdl2/GLWindow.cpp
+    src/sdl2/SdlKeyEvent.cpp
+    include/ListenerType.h
+    include/EventType.h
+    include/SdlKeyEvent.h
+    include/Observer.h
+    include/Subject.h
+    include/GLWindow.h
+    include/GL/glew.h
+    include/GL/glxew.h
+    include/GL/wglew.h
+    include/Components/GraphicsComponent.h
+    include/Renderer.h
+    include/Game.h
+    include/Graphics/SOIL.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})

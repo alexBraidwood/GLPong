@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "Event.h"
+#include "Subject.h"
 #include "EventType.h"
 #include <vector>
 
@@ -12,27 +12,20 @@ namespace engine
 {
     namespace sdl2
     {
-        class SdlKeyEvent : public engine::Event
+        class SdlKeyEvent
         {
         public:
-            void AttachObserver( std::shared_ptr<Observer> observer) override;
+            SDL_Keycode key_pressed() const;
 
-            void DetachObserver(std::shared_ptr<Observer> observer) override;
+            SDL_Keycode key_released() const;
 
-            void NotifyObservers() override;
+            void key_pressed(SDL_Keycode key);
 
-            SDL_Keycode last_key_pressed();
-
-            SDL_Keycode last_key_released();
-
-            void last_key_pressed(SDL_Keycode key);
-
-            void last_key_released(SDL_Keycode key);
+            void key_released(SDL_Keycode key);
 
         private:
-            std::vector<std::shared_ptr<Observer>> observers_;
-            SDL_Keycode last_key_pressed_;
-            SDL_Keycode last_key_released_;
+            SDL_Keycode key_pressed_;
+            SDL_Keycode key_released_;
         };
     }
 }

@@ -56,10 +56,10 @@ void GLWindow::Update()
         case SDL_QUIT:
             break;
         case SDL_KEYDOWN:
-            key_event_listener_->last_key_pressed(e.key.keysym.sym);
+            key_event_listener_->key_pressed(e.key.keysym.sym);
             break;
         case SDL_KEYUP:
-            key_event_listener_->last_key_released(e.key.keysym.sym);
+            key_event_listener_->key_released(e.key.keysym.sym);
             break;
     }
 }
