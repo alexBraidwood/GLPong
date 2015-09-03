@@ -5,8 +5,7 @@
 #pragma once
 
 
-class GraphicsComponent
-{
+class GraphicsComponent {
 
 };
 

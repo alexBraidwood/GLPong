@@ -11,24 +11,22 @@
 #include "SdlKeyEvent.h"
 #include <map>
 
-namespace engine
-{
+namespace engine {
 
-    class Game
-    {
-    public:
-        Game();
+class Game {
+ public:
+  Game();
 
-        void Update();
+  void Update();
 
-    public:
+ public:
 
-    private:
-        std::shared_ptr<Renderer> renderer_;
-        std::unique_ptr<engine::sdl2::GLWindow> window_;
+ private:
+  std::shared_ptr<Renderer> renderer_;
+  std::unique_ptr<engine::sdl2::GLWindow> window_;
 
-        std::unique_ptr<Subject<sdl2::SdlKeyEvent>> key_subscriber_;
-        bool is_running;
-    };
+  std::unique_ptr<Subject<sdl2::SdlKeyEvent>> key_subscriber_;
+  bool is_running;
+};
 }
 

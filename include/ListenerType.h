@@ -4,14 +4,12 @@
 
 #pragma once
 
-namespace engine
-{
-    enum class ListenerType
-    {
-        KeyEventListener,
-        WindowEventListener,
-        MouseEventListener,
-        TouchEventListener,
-        GamepadEventListener
-    };
+namespace engine {
+enum class ListenerType {
+  KeyEventListener,
+  WindowEventListener,
+  MouseEventListener,
+  TouchEventListener,
+  GamepadEventListener
+};
 }

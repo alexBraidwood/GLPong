@@ -1,10 +1,9 @@
 #include "Game.h"
 
-int main(int argc, char* argv[])
-{
-    engine::Game g;
-    g.Update();
+int main(int argc, char *argv[]) {
+  engine::Game g;
+  g.Update();
 
-    return 0;
+  return 0;
 }
 

@@ -4,17 +4,15 @@
 
 #pragma once
 
-namespace engine
-{
-    template <typename T>
-    class Subject;
+namespace engine {
+template<typename T>
+class Subject;
 
-    template <typename T>
-    class Observer
-    {
-    public:
-        virtual void Update(const Subject<T>& event) = 0;
-    };
+template<typename T>
+class Observer {
+ public:
+  virtual void Update(const Subject<T> &event) = 0;
+};
 }
 
 
