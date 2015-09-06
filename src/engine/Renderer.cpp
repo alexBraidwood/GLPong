@@ -32,10 +32,10 @@ void Renderer::Init() {
   glViewport(0, 0, 800, 600);
 
   auto vertex_shader = CompileShader("Shaders/vertex_shader.glsl", GL_VERTEX_SHADER, 1);
-  std::cout << ShaderCompilationResult(vertex_shader) << std::endl;
+  ShaderCompilationResult(vertex_shader);
 
   auto fragment_shader = CompileShader("Shaders/fragment_shader.glsl", GL_FRAGMENT_SHADER, 1);
-  std::cout << ShaderCompilationResult(fragment_shader) << std::endl;
+  ShaderCompilationResult(fragment_shader);
 
   shader_program_ = glCreateProgram();
   glAttachShader(shader_program_, vertex_shader);

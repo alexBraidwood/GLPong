@@ -15,7 +15,7 @@ GLWindow::GLWindow() {
     loaded_successfully_ = false;
   } else {
     sdl_window_ = std::unique_ptr<SDL_Window, SDLWindowDestroyer>(
-        SDL_CreateWindow("SDL Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600,
+        SDL_CreateWindow("Game Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600,
                          SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN));
     if (sdl_window_ == nullptr) {
       std::cout << "Window couldn't be created! SDL_Error: " << SDL_GetError();
@@ -50,6 +50,7 @@ void GLWindow::Update() {
   SDL_PollEvent(&e);
   switch (e.type) {
     case SDL_QUIT:
+      SDL_Quit();
       break;
     case SDL_KEYDOWN:
       key_event_listener_->key_pressed(e.key.keysym.sym);
