@@ -1,6 +1,9 @@
 # Personal Game Engine
 Personal game engine for fiddling with 2d / 3d math, algorithms, and learning.
 
+## Overall Goal
+To provide a simple, open-source, base engine for accomplishing simple 2d or 3d games with the ability to easily extend beyond the most basic of engine features. This is engine is meant to be somewhere in between LÖVE and Godot in terms of usability and complexity.
+
 # Requirements
 ###SDL2
 ###GLEW
