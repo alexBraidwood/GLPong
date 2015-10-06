@@ -30,21 +30,22 @@ set(SOURCES
         src/glew/glew.c
         src/sdl2/GLWindow.cc
         src/sdl2/SdlKeyEvent.cc
-        include/ListenerType.h
-        include/EventType.h
-        include/SdlKeyEvent.h
+        include/sdl2/ListenerType.h
+        include/sdl2/EventType.h
+        include/sdl2/SdlKeyEvent.h
         include/Observer.h
         include/Subject.h
-        include/GLWindow.h
+        include/sdl2/GLWindow.h
         include/GL/glew.h
         include/GL/glxew.h
         include/GL/wglew.h
-        include/Components/GraphicsComponent.h
+        include/components/GraphicsComponent.h
         include/Renderer.h
         include/Game.h
-        include/Graphics/SOIL.h
+        include/graphics/SOIL.h
         include/sdl2/Keycode.h
-        include/sdl2/SDLWindow.h src/sdl2/SDLWindow.cc)
+        include/sdl2/SDLWindow.h
+        src/sdl2/SDLWindow.cc)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})

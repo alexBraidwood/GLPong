@@ -5,6 +5,7 @@
 #pragma once
 
 namespace engine {
+namespace sdl2 {
 enum class ListenerType {
   KeyEventListener,
   WindowEventListener,
@@ -12,4 +13,5 @@ enum class ListenerType {
   TouchEventListener,
   GamepadEventListener
 };
+}
 }

@@ -8,26 +8,6 @@
 using namespace engine::sdl2;
 
 GLWindow::GLWindow() {
-  loaded_successfully_ = true;
-
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-    std::cout << "SDL couldn't be initialized! SDL_Error: " << SDL_GetError();
-    loaded_successfully_ = false;
-  } else {
-    sdl_window_ = std::make_unique<SDL_Window, SDLWindowDestroyer>(
-        SDL_CreateWindow("Game Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600,
-                         SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN));
-    if (sdl_window_ == nullptr) {
-      std::cout << "Window couldn't be created! SDL_Error: " << SDL_GetError();
-      loaded_successfully_ = false;
-    } else {
-      sdl_gl_context_ = SDL_GL_CreateContext(sdl_window_.get());
-      if (sdl_gl_context_ == nullptr) {
-        std::cout << "Failed to create OpenGL Context! SDL_Error: " << SDL_GetError();
-      }
-    }
-  }
-
   key_event_listener_ = std::make_shared<SdlKeyEvent>();
 }
 
@@ -45,7 +25,7 @@ std::shared_ptr<SdlKeyEvent> GLWindow::key_event_listener() {
 }
 
 void GLWindow::Update() {
-  SDL_GL_SwapWindow(sdl_window_.get());
+  //SDL_GL_SwapWindow(*sdl_window_);
   SDL_Event e;
   SDL_PollEvent(&e);
   switch (e.type) {

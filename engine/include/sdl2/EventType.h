@@ -2,9 +2,12 @@
 // Created by alex on 7/5/15.
 //
 
-#pragma once
+#ifndef ENGINE_SDL2_EVENTTYPE
+#define ENGINE_SDL2_EVENTTYPE
 
 #include <SDL_events.h>
+
+namespace engine {
 namespace sdl2 {
 enum class EventType {
   FirstEvent = SDL_FIRSTEVENT,
@@ -49,3 +52,6 @@ enum class EventType {
   RenderTargetsReset = SDL_RENDER_TARGETS_RESET
 };
 }
+}
+
+#endif

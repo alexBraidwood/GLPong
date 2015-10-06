@@ -2,7 +2,8 @@
 // Created by alex on 7/5/15.
 //
 
-#pragma once
+#ifndef ENGINE_SDL2_SDLKEYEVENT
+#define ENGINE_SDL2_SDLKEYEVENT
 
 #include "Subject.h"
 #include "EventType.h"
@@ -26,6 +27,4 @@ class SdlKeyEvent {
 };
 }
 }
-
-
-
+#endif

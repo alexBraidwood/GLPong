@@ -2,7 +2,8 @@
 // Created by alex on 7/5/15.
 //
 
-#pragma once
+#ifndef ENGINE_SUBJECT
+#define ENGINE_SUBJECT
 
 #include <memory>
 #include "EventType.h"
@@ -26,4 +27,5 @@ class Subject {
 };
 }
 
+#endif
 

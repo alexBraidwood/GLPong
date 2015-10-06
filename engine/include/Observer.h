@@ -2,7 +2,8 @@
 // Created by alex on 7/5/15.
 //
 
-#pragma once
+#ifndef ENGINE_OBSERVER
+#define ENGINE_OBSERVER
 
 namespace engine {
 template<typename T>
@@ -14,5 +15,7 @@ class Observer {
   virtual void Update(const Subject<T> &event) = 0;
 };
 }
+
+#endif
 
 

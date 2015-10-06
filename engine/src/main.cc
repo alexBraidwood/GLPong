@@ -1,8 +1,8 @@
 #include "Game.h"
 
 int main(int argc, char *argv[]) {
-  auto g = std::make_unique<engine::Game>();
-  g->Update();
+  engine::Game g;
+  g.Update();
 
   return 0;
 }

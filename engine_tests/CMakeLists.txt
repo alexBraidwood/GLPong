@@ -5,7 +5,7 @@ include_directories(include)
 
 find_package(OpenGL REQUIRED)
 
-link_directories(lib)
+link_directories(lib/gtest)
 set(LINK_OPTIONS gmock gtest)
 
 

@@ -3,25 +3,25 @@
 //
 
 #include "Game.h"
+#include <sdl2/SDLWindow.h>
 
 using namespace engine;
 using namespace engine::sdl2;
 
 Game::Game()
-  : window_(new GLWindow),
-    renderer_(new Renderer){
+  : window_(new SDLWindow) {
+  window_->Create();
   is_running = true;
 }
 
 void Game::Update() {
   while (is_running) {
-    // When do we close the window?
-    // I have no idea, yet, let the renderer decide
-    window_->Update();
-    renderer_->Update();
-    if (window_->key_event_listener()->key_pressed() == SDLK_ESCAPE) {
-      is_running = false;
-    }
+
+  }
+}
+
+void Game::Initialize() {
+  if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
   }
 }
 
