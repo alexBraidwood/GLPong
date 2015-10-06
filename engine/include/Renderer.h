@@ -9,10 +9,6 @@
 #include <memory>
 #include <GL/glew.h>
 #include <GL/gl.h>
-#include "sdl2/GLWindow.h"
-
-#include <Graphics/glew.h>
-#include <SDL.h>
 
 namespace engine {
 class Renderer final {

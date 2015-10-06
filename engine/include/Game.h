@@ -7,10 +7,9 @@
 
 #include "Renderer.h"
 #include "sdl2/GLWindow.h"
-#include "ListenerType.h"
 #include "Subject.h"
-#include "SdlKeyEvent.h"
 #include <map>
+#include "sdl2/SDLWindow.h"
 
 namespace engine {
 
@@ -25,12 +24,10 @@ class Game {
   void Update();
 
  protected:
-  virtual void Initialize();
 
  private:
-  Subject<sdl2::SdlKeyEvent>* key_subscriber_;
   std::unique_ptr<sdl2::SDLWindow> window_;
-  std::unique_ptr<Renderer> renderer_;
+  std::unique_ptr<sdl2::GLWindow> gl_window_;
   bool is_running;
 };
 }

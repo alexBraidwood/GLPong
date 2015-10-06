@@ -21,6 +21,7 @@ class SDLWindow {
     return window_handle_;
   }
   void Create();
+  SDL_GLContext CreateGLContext() const;
 
  private:
   SDL_Window* window_handle_;

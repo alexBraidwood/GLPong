@@ -9,19 +9,18 @@ using namespace engine;
 using namespace engine::sdl2;
 
 Game::Game()
-  : window_(new SDLWindow) {
-  window_->Create();
+  : window_(new SDLWindow),
+    gl_window_(new GLWindow(std::move(window_))) {
+
   is_running = true;
 }
 
 void Game::Update() {
   while (is_running) {
-
-  }
-}
-
-void Game::Initialize() {
-  if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+    gl_window_->Update();
+    if (gl_window_->LastKeyPress() == Keycode::Escape) {
+      is_running = false;
+    }
   }
 }
 

@@ -2,7 +2,7 @@
 // Created by alex on 7/5/15.
 //
 
-#include "SdlKeyEvent.h"
+#include "sdl2/SdlKeyEvent.h"
 #include "Observer.h"
 #include <algorithm>
 #include <iostream>

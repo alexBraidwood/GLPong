@@ -10,10 +10,6 @@
 namespace engine {
 namespace sdl2 {
 
-inline Keycode FromSdlKeycode(SDL_Keycode keycode) {
-  return static_cast<Keycode>(keycode);
-}
-
 enum class Keycode {
   Unknown = SDLK_UNKNOWN,
   Return = SDLK_RETURN,
@@ -29,6 +25,11 @@ enum class Keycode {
   Ampersand = SDLK_AMPERSAND,
   Quote = SDLK_QUOTE
 };
+
+inline Keycode FromSdlKeycode(SDL_Keycode keycode) {
+  return static_cast<Keycode>(keycode);
+}
+
 }
 }
 

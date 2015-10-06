@@ -2,13 +2,17 @@
 // Created by alz12_000 on 6/30/2015.
 //
 
-#include "GLWindow.h"
-#include <iostream>
+#include "sdl2/GLWindow.h"
 
 using namespace engine::sdl2;
 
-GLWindow::GLWindow() {
-  key_event_listener_ = std::make_shared<SdlKeyEvent>();
+GLWindow::GLWindow(std::unique_ptr<SDLWindow> window)
+  : window_(std::move(window)),
+    renderer_(new Renderer),
+    key_event_listener_(new SdlKeyEvent) {
+  window_->Create();
+  sdl_gl_context_ = window_->CreateGLContext();
+  renderer_->Init();
 }
 
 GLWindow::~GLWindow() {
@@ -16,18 +20,15 @@ GLWindow::~GLWindow() {
   SDL_GL_DeleteContext(sdl_gl_context_);
 }
 
-SDL_GLContext GLWindow::sdl_gl_context() {
-  return sdl_gl_context_;
-}
-
-std::shared_ptr<SdlKeyEvent> GLWindow::key_event_listener() {
-  return key_event_listener_;
+auto GLWindow::LastKeyPress() const -> Keycode {
+  return FromSdlKeycode(key_event_listener_->key_pressed());
 }
 
 void GLWindow::Update() {
-  //SDL_GL_SwapWindow(*sdl_window_);
+  SDL_GL_SwapWindow(*window_);
   SDL_Event e;
   SDL_PollEvent(&e);
+  renderer_->Update();
   switch (e.type) {
     case SDL_QUIT:
       SDL_Quit();

@@ -5,6 +5,7 @@
 #include "Renderer.h"
 #include <fstream>
 #include <sstream>
+#include <SDL.h>
 
 using namespace engine;
 
@@ -15,7 +16,6 @@ GLfloat vertices[] = {
 };
 
 Renderer::Renderer() {
-  Init();
 }
 
 void Renderer::Init() {

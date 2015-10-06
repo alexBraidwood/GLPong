@@ -6,7 +6,7 @@
 #define ENGINE_SUBJECT
 
 #include <memory>
-#include "EventType.h"
+#include "sdl2/EventType.h"
 
 namespace engine {
 template<typename T>
