@@ -15,7 +15,7 @@ SDLWindow::SDLWindow()
 
 }
 
-void SDLWindow::Create() {
+auto SDLWindow::Create() -> void {
   if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_GAMECONTROLLER | SDL_INIT_TIMER) < 0) {
     // TODO(): Handle the error here
   }

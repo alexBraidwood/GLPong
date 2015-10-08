@@ -24,7 +24,7 @@ auto GLWindow::LastKeyPress() const -> Keycode {
   return FromSdlKeycode(key_event_listener_->key_pressed());
 }
 
-void GLWindow::Update() {
+auto GLWindow::Update() -> void {
   SDL_GL_SwapWindow(*window_);
   SDL_Event e;
   SDL_PollEvent(&e);

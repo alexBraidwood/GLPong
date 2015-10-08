@@ -15,7 +15,7 @@ Game::Game()
   is_running = true;
 }
 
-void Game::Update() {
+auto Game::Update() -> void {
   while (is_running) {
     gl_window_->Update();
     if (gl_window_->LastKeyPress() == Keycode::Escape) {

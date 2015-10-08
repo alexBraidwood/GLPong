@@ -4,23 +4,21 @@
 
 #include "sdl2/SdlKeyEvent.h"
 #include "Observer.h"
-#include <algorithm>
-#include <iostream>
 
 using namespace engine::sdl2;
 
-SDL_Keycode SdlKeyEvent::key_pressed() const {
+auto SdlKeyEvent::key_pressed() const -> SDL_Keycode {
   return key_pressed_;
 }
 
-SDL_Keycode SdlKeyEvent::key_released() const {
+auto SdlKeyEvent::key_released() const -> SDL_Keycode {
   return key_released_;
 }
 
-void SdlKeyEvent::key_pressed(SDL_Keycode key) {
+auto SdlKeyEvent::key_pressed(SDL_Keycode key) -> void {
   key_pressed_ = key;
 }
 
-void SdlKeyEvent::key_released(SDL_Keycode key) {
+auto SdlKeyEvent::key_released(SDL_Keycode key) -> void {
   key_released_ = key;
 }

@@ -26,8 +26,8 @@ class Renderer final {
 
  private:
   GLuint shader_program_;
-  GLuint VAO_;
-  GLuint VBO_;
+  GLuint VAO_; // Vertex Array Object
+  GLuint VBO_; // Vertex Buffer Object
 };
 }
 

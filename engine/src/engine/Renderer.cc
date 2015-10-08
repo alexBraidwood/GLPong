@@ -18,7 +18,7 @@ GLfloat vertices[] = {
 Renderer::Renderer() {
 }
 
-void Renderer::Init() {
+auto Renderer::Init() -> void {
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 
@@ -57,10 +57,11 @@ void Renderer::Init() {
 
   glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
   glUseProgram(shader_program_);
+
   glBindVertexArray(VAO_);
 }
 
-GLuint Renderer::CompileShader(std::string shader_file, GLenum shader_type, int element_count) const {
+auto Renderer::CompileShader(std::string shader_file, GLenum shader_type, int element_count) const -> GLuint {
   GLuint shader;
   shader = glCreateShader(shader_type);
 
@@ -74,7 +75,7 @@ GLuint Renderer::CompileShader(std::string shader_file, GLenum shader_type, int 
   return shader;
 }
 
-std::string Renderer::ShaderCompilationResult(const GLuint shader) const {
+auto Renderer::ShaderCompilationResult(const GLuint shader) const -> std::string {
   GLint success;
   GLchar infoLog[512];
   glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
@@ -89,7 +90,7 @@ std::string Renderer::ShaderCompilationResult(const GLuint shader) const {
   return "Success";
 }
 
-std::string Renderer::LoadShader(const std::string &shader_location) const {
+auto Renderer::LoadShader(const std::string &shader_location) const -> std::string{
   std::ifstream input(shader_location);
   std::string result;
 
@@ -107,7 +108,8 @@ std::string Renderer::LoadShader(const std::string &shader_location) const {
   return result;
 }
 
-void Renderer::Update() {
+auto Renderer::Update() -> void {
+
   glClear(GL_COLOR_BUFFER_BIT);
   glDrawArrays(GL_TRIANGLES, 0, 3);
 }
