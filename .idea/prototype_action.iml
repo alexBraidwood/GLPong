@@ -15,21 +15,21 @@
       <sourceFolder url="file://$MODULE_DIR$/engine/include/exception/engine_exception.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/graphics/SOIL.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/EventType.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/GLWindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/GL_window.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/Keycode.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/ListenerType.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/SDLWindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/SDL_window.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/SdlKeyEvent.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/Components/GraphicsComponent.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/engine/Game.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/engine/Renderer.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/Components/GraphicsComponent.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/engine/Game.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/engine/Renderer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/src/glew/glew.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/main.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/sdl2/GLWindow.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/sdl2/SDLWindow.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/src/sdl2/SdlKeyEvent.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/sdl2/GL_window.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/sdl2/SDL_window.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/src/sdl2/SdlKeyEvent.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine_tests/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine_tests/src/main.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine_tests/src/main.cpp" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

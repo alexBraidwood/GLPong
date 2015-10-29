@@ -11,23 +11,24 @@ namespace engine {
 namespace sdl2 {
 
 enum class Keycode {
-  Unknown = SDLK_UNKNOWN,
-  Return = SDLK_RETURN,
-  Escape = SDLK_ESCAPE,
-  Backspace = SDLK_BACKSPACE,
-  Tab = SDLK_TAB,
-  Space = SDLK_SPACE,
-  Exclamation = SDLK_EXCLAIM,
-  DoubleQuote = SDLK_QUOTEDBL,
-  Hash = SDLK_HASH,
-  Percent = SDLK_PERCENT,
-  Dollar = SDLK_DOLLAR,
-  Ampersand = SDLK_AMPERSAND,
-  Quote = SDLK_QUOTE
+    Unknown = SDLK_UNKNOWN,
+    Return = SDLK_RETURN,
+    Escape = SDLK_ESCAPE,
+    Backspace = SDLK_BACKSPACE,
+    Tab = SDLK_TAB,
+    Space = SDLK_SPACE,
+    Exclamation = SDLK_EXCLAIM,
+    DoubleQuote = SDLK_QUOTEDBL,
+    Hash = SDLK_HASH,
+    Percent = SDLK_PERCENT,
+    Dollar = SDLK_DOLLAR,
+    Ampersand = SDLK_AMPERSAND,
+    Quote = SDLK_QUOTE
 };
 
-inline Keycode FromSdlKeycode(SDL_Keycode keycode) {
-  return static_cast<Keycode>(keycode);
+inline Keycode FromSdlKeycode(SDL_Keycode keycode)
+{
+    return static_cast<Keycode>(keycode);
 }
 
 }

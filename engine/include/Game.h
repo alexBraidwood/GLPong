@@ -6,29 +6,27 @@
 #define ENGINE_GAME
 
 #include "Renderer.h"
-#include "sdl2/GLWindow.h"
+#include "GL_window.h"
 #include "Subject.h"
 #include <map>
-#include "sdl2/SDLWindow.h"
+#include "sdl2/SDL_window.h"
 
 namespace engine {
 
-class sdl2::SDLWindow;
-
 class Game {
- public:
-  Game();
-  virtual ~Game() {}
+public:
+    Game();
+    virtual ~Game() { }
 
- public:
-  void Update();
+public:
+    void Update();
 
- protected:
+protected:
 
- private:
-  std::unique_ptr<sdl2::SDLWindow> window_;
-  std::unique_ptr<sdl2::GLWindow> gl_window_;
-  bool is_running;
+private:
+    sdl2::sdl_window window;
+    gl_window gl_window;
+    bool is_running;
 };
 }
 

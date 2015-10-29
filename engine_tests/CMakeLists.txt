@@ -10,7 +10,7 @@ set(LINK_OPTIONS gmock gtest)
 
 
 set(SOURCES
-        src/main.cc)
+        src/main.cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 

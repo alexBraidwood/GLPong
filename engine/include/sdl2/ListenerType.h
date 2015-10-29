@@ -7,11 +7,11 @@
 namespace engine {
 namespace sdl2 {
 enum class ListenerType {
-  KeyEventListener,
-  WindowEventListener,
-  MouseEventListener,
-  TouchEventListener,
-  GamepadEventListener
+    KeyEventListener,
+    WindowEventListener,
+    MouseEventListener,
+    TouchEventListener,
+    GamepadEventListener
 };
 }
 }

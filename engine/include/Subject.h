@@ -9,21 +9,27 @@
 #include "sdl2/EventType.h"
 
 namespace engine {
-template<typename T>
-class Observer;
 
-template<typename T>
+template <class TObserver, typename TEventType>
 class Subject {
- public:
-  virtual void AttachObserver(std::shared_ptr<Observer<T>> observer) = 0;
+public:
+    virtual auto attach(const TObserver& observer) -> void
+    {
 
-  virtual void DetachObserver(std::shared_ptr<Observer<T>> observer) = 0;
+    }
 
-  virtual void NotifyObservers() = 0;
+    virtual auto detach(const TObserver& observer) -> void
+    {
 
-  virtual void Register(T& event);
+    }
 
-  virtual T& last_event() const = 0;
+    virtual auto notify(const TEventType& event) -> void
+    {
+
+    }
+
+private:
+
 };
 }
 
