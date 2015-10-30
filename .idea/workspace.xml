@@ -19,18 +19,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24d2eea4-4514-46af-a65a-2ed6fd646406" name="Default" comment="Added Test project and restructured code organization to allow for subprojects. Added gtest and gmock to engine_tests.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/engine/include/external/graphics/SOIL.h" />
+      <change type="DELETED" beforePath="E:\dev\my_first_game_engine\engine\include\Components\GraphicsComponent.h" afterPath="" />
+      <change type="DELETED" beforePath="E:\dev\my_first_game_engine\engine\include\Graphics\SOIL.h" afterPath="" />
+      <change type="DELETED" beforePath="E:\dev\my_first_game_engine\engine\src\Components\GraphicsComponent.cpp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/CMakeLists.txt" afterPath="$PROJECT_DIR$/engine/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine_tests/CMakeLists.txt" afterPath="$PROJECT_DIR$/engine_tests/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/src/sdl2/GL_window.cpp" afterPath="$PROJECT_DIR$/engine/src/sdl2/GL_window.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/include/sdl2/GL_window.h" afterPath="$PROJECT_DIR$/engine/include/sdl2/GL_window.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/src/engine/Game.cpp" afterPath="$PROJECT_DIR$/engine/src/engine/Game.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/include/Game.h" afterPath="$PROJECT_DIR$/engine/include/Game.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/src/sdl2/SDL_window.cpp" afterPath="$PROJECT_DIR$/engine/src/sdl2/SDL_window.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/include/sdl2/SDL_window.h" afterPath="$PROJECT_DIR$/engine/include/sdl2/SDL_window.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/src/main.cpp" afterPath="$PROJECT_DIR$/engine/src/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/prototype_action.iml" afterPath="$PROJECT_DIR$/.idea/prototype_action.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\GL\glew.h" afterPath="$PROJECT_DIR$/engine/include/external/GL/glew.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\GL\glxew.h" afterPath="$PROJECT_DIR$/engine/include/external/GL/glxew.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\GL\wglew.h" afterPath="$PROJECT_DIR$/engine/include/external/GL/wglew.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\Game.h" afterPath="$PROJECT_DIR$/engine/include/engine/Game.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\Renderer.h" afterPath="$PROJECT_DIR$/engine/include/engine/Renderer.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\Subject.h" afterPath="$PROJECT_DIR$/engine/include/engine/events/Subject.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\sdl2\EventType.h" afterPath="$PROJECT_DIR$/engine/include/engine/sdl2/EventType.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\sdl2\GL_window.h" afterPath="$PROJECT_DIR$/engine/include/engine/sdl2/GL_window.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\sdl2\Keycode.h" afterPath="$PROJECT_DIR$/engine/include/engine/sdl2/Keycode.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\sdl2\ListenerType.h" afterPath="$PROJECT_DIR$/engine/include/engine/sdl2/ListenerType.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\sdl2\SDL_window.h" afterPath="$PROJECT_DIR$/engine/include/engine/sdl2/SDL_window.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\include\sdl2\SdlKeyEvent.h" afterPath="$PROJECT_DIR$/engine/include/engine/sdl2/SdlKeyEvent.h" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\src\glew\glew.c" afterPath="$PROJECT_DIR$/engine/src/external/glew/glew.c" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\src\glew\glewinfo.c" afterPath="$PROJECT_DIR$/engine/src/external/glew/glewinfo.c" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\src\glew\visualinfo.c" afterPath="$PROJECT_DIR$/engine/src/external/glew/visualinfo.c" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\src\sdl2\GL_window.cpp" afterPath="$PROJECT_DIR$/engine/src/engine/sdl2/GL_window.cpp" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\src\sdl2\SDL_window.cpp" afterPath="$PROJECT_DIR$/engine/src/engine/sdl2/SDL_window.cpp" />
+      <change type="MOVED" beforePath="E:\dev\my_first_game_engine\engine\src\sdl2\SdlKeyEvent.cpp" afterPath="$PROJECT_DIR$/engine/src/engine/sdl2/SdlKeyEvent.cpp" />
     </list>
     <ignored path="prototype_action.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,71 +66,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SDL_window.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/sdl2/SDL_window.cpp">
+      <file leaf-file-name="GL_window.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/engine/src/engine/sdl2/GL_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GL_window.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/sdl2/GL_window.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.4729951">
               <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Renderer.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/engine/Renderer.cpp">
+      <file leaf-file-name="Keycode.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/Keycode.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_shader.glsl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/engine/Shaders/fragment_shader.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08597285">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vertex_shader.glsl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/Shaders/vertex_shader.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/engine/Game.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,9 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/include/SdlInputEvent.h" />
-        <option value="$PROJECT_DIR$/include/SdlKeyEvent.h" />
-        <option value="$PROJECT_DIR$/src/sdl2/SdlKeyEvent.cpp" />
         <option value="$PROJECT_DIR$/include/Observer.h" />
         <option value="$PROJECT_DIR$/src/engine/Game.cpp" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
@@ -161,15 +123,12 @@
         <option value="$PROJECT_DIR$/engine/src/main.cc" />
         <option value="$PROJECT_DIR$/engine/Shaders/fragment_shader.glsl" />
         <option value="$PROJECT_DIR$/engine/src/engine/Renderer.cc" />
-        <option value="$PROJECT_DIR$/engine/src/main.cpp" />
         <option value="$PROJECT_DIR$/engine/src/sdl2/GLWindow.cpp" />
-        <option value="$PROJECT_DIR$/engine/include/sdl2/SdlKeyEvent.h" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/EventType.h" />
         <option value="$PROJECT_DIR$/engine/src/sdl2/SDLWindow.cpp" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/Keycode.h" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/ListenerType.h" />
         <option value="$PROJECT_DIR$/engine/include/Renderer.h" />
-        <option value="$PROJECT_DIR$/engine/src/engine/Renderer.cpp" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/GLWindow.h" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/SDLWindow.h" />
         <option value="$PROJECT_DIR$/engine/include/Observer.h" />
@@ -177,14 +136,20 @@
         <option value="$PROJECT_DIR$/engine/include/Subject.h" />
         <option value="$PROJECT_DIR$/engine/include/SDL_exception.h" />
         <option value="$PROJECT_DIR$/engine_tests/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/engine/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/GL_window.h" />
         <option value="$PROJECT_DIR$/engine/include/Game.h" />
-        <option value="$PROJECT_DIR$/engine/src/engine/Game.cpp" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/SDL_window.h" />
         <option value="$PROJECT_DIR$/engine/src/sdl2/GL_window.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/engine/src/sdl2/SDL_window.cpp" />
+        <option value="$PROJECT_DIR$/engine/src/main.cpp" />
+        <option value="$PROJECT_DIR$/engine/src/external/glew/glew.c" />
+        <option value="$PROJECT_DIR$/engine/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/engine/src/engine/Renderer.cpp" />
+        <option value="$PROJECT_DIR$/engine/src/engine/Game.cpp" />
+        <option value="$PROJECT_DIR$/engine/include/sdl2/SdlKeyEvent.h" />
+        <option value="$PROJECT_DIR$/engine/include/engine/Renderer.h" />
+        <option value="$PROJECT_DIR$/engine/include/engine/Game.h" />
       </list>
     </option>
   </component>
@@ -196,10 +161,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="81" />
-    <option name="y" value="30" />
-    <option name="width" value="2479" />
-    <option name="height" value="1410" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -308,6 +273,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype_action" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_first_game_engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sdl2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -326,11 +317,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glew" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -348,7 +335,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -370,7 +357,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Shaders" />
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sdl2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,11 +387,11 @@
       <recent name="C:\Users\alz12_000\Dropbox\dev\GameDev\prototype_action\SDL2\i686-w64-mingw32" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\my_first_game_engine\engine\include\sdl2" />
-      <recent name="E:\my_first_game_engine\engine" />
-      <recent name="E:\my_first_game_engine\engine_tests" />
-      <recent name="E:\my_first_game_engine\include\sdl2" />
-      <recent name="$PROJECT_DIR$/src/sdl2" />
+      <recent name="E:\dev\my_first_game_engine\engine\src\engine" />
+      <recent name="E:\dev\my_first_game_engine\engine\include\engine" />
+      <recent name="E:\dev\my_first_game_engine\engine\src\external" />
+      <recent name="E:\dev\my_first_game_engine\engine\include\external" />
+      <recent name="E:\dev\my_first_game_engine\engine\include\engine\events" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Engine">
@@ -468,28 +463,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="30" width="2479" height="1410" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1290843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12864584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3252376" sideWeight="0.40677083" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240059" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273495" sideWeight="0.5932292" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32629356" sideWeight="0.43541667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39882267" sideWeight="0.47083333" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32621503" sideWeight="0.40677083" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32671082" sideWeight="0.43541667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39882267" sideWeight="0.47083333" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -515,7 +510,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/engine/include/sdl2/EventType.h</url>
+          <url>file://$PROJECT_DIR$/engine/include/engine/sdl2/EventType.h</url>
           <line>11</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -536,14 +531,14 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/GL_window.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/GL_window.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Game.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/Game.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -564,28 +559,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Renderer.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/Renderer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/Keycode.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/Keycode.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/SDL_window.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/SDL_window.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/Keycode.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/Keycode.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
@@ -599,21 +594,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/sdl2/SdlKeyEvent.cpp">
+    <entry file="file://$PROJECT_DIR$/engine/src/engine/sdl2/SdlKeyEvent.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Subject.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/events/Subject.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Renderer.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/Renderer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
@@ -662,7 +657,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/glew/glewinfo.c">
+    <entry file="file://$PROJECT_DIR$/engine/src/external/glew/glewinfo.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -683,17 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/GL/glxew.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/external/GL/glxew.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/glew/glew.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34819898">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -718,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/GL/glew.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33273056">
-          <caret line="15057" column="17" selection-start-line="15057" selection-start-column="10" selection-end-line="15057" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/engine_tests/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25123152">
@@ -732,7 +713,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/EventType.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/EventType.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
@@ -740,31 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/ListenerType.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/ListenerType.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/SdlKeyEvent.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/Components/GraphicsComponent.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/Keycode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -775,14 +735,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Renderer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/sdl2/SdlKeyEvent.cpp">
+    <entry file="file://$PROJECT_DIR$/engine/src/engine/sdl2/SdlKeyEvent.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08451957">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -803,35 +756,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Subject.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/GL_window.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/GL_window.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/Game.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/include/sdl2/SDL_window.h">
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/SDL_window.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
@@ -845,42 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/sdl2/SDL_window.cpp">
+    <entry file="file://$PROJECT_DIR$/engine/src/engine/sdl2/SDL_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/sdl2/GL_window.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/engine/Game.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/engine/Renderer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -895,8 +795,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/Shaders/fragment_shader.glsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08597285">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.092491835">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/external/graphics/SOIL.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/external/GL/glew.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34991422">
+          <caret line="15057" column="17" selection-start-line="15057" selection-start-column="10" selection-end-line="15057" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/external/glew/glew.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7958834">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/events/Subject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13770492">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#160#198#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/SdlKeyEvent.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19508196">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/Renderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25081968">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/Game.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22295082">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/engine/Game.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16721311">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#37#54#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/engine/Renderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39016393">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="e#37#58#0" expanded="false" />
+            <element signature="e#273#1643#0" expanded="false" />
+            <element signature="e#1645#2092#0" expanded="false" />
+            <element signature="e#2094#2514#0" expanded="false" />
+            <element signature="e#2516#2979#0" expanded="false" />
+            <element signature="e#2981#3089#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19508196">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/include/engine/sdl2/Keycode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/engine/sdl2/GL_window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4729951">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

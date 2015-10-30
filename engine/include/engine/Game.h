@@ -6,7 +6,7 @@
 #define ENGINE_GAME
 
 #include "Renderer.h"
-#include "Subject.h"
+#include "events/Subject.h"
 #include <map>
 #include "sdl2/SDL_window.h"
 #include "sdl2/GL_window.h"

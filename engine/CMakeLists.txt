@@ -4,6 +4,8 @@ project(FireEngine)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${FireEngine_SOURCE_DIR}/cmake")
 
 include_directories(include)
+include_directories(include/engine)
+include_directories(include/external)
 
 find_package(OpenGL REQUIRED)
 
@@ -24,27 +26,25 @@ endif()
 
 set(SOURCES
         src/main.cpp
-        src/Components/GraphicsComponent.cpp
         src/engine/Renderer.cpp
         src/engine/Game.cpp
-        src/glew/glew.c
-        src/sdl2/GL_window.cpp
-        src/sdl2/SdlKeyEvent.cpp
-        include/sdl2/ListenerType.h
-        include/sdl2/EventType.h
-        include/sdl2/SdlKeyEvent.h
-        include/Subject.h
-        include/sdl2/GL_window.h
-        include/GL/glew.h
-        include/GL/glxew.h
-        include/GL/wglew.h
-        include/Components/GraphicsComponent.h
-        include/Renderer.h
-        include/Game.h
-        include/Graphics/SOIL.h
-        include/sdl2/Keycode.h
-        include/sdl2/SDL_window.h
-        src/sdl2/SDL_window.cpp)
+        src/external/glew/glew.c
+        src/engine/sdl2/GL_window.cpp
+        src/engine/sdl2/SdlKeyEvent.cpp
+        include/engine/sdl2/ListenerType.h
+        include/engine/sdl2/EventType.h
+        include/engine/sdl2/SdlKeyEvent.h
+        include/engine/events/Subject.h
+        include/engine/sdl2/GL_window.h
+        include/external/GL/glew.h
+        include/external/GL/glxew.h
+        include/external/GL/wglew.h
+        include/engine/Renderer.h
+        include/engine/Game.h
+        include/external/graphics/SOIL.h
+        include/engine/sdl2/Keycode.h
+        include/engine/sdl2/SDL_window.h
+        src/engine/sdl2/SDL_window.cpp)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})

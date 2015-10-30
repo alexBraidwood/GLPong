@@ -5,7 +5,7 @@
 #ifndef ENGINE_SDL2_SDLKEYEVENT
 #define ENGINE_SDL2_SDLKEYEVENT
 
-#include "Subject.h"
+#include "events/Subject.h"
 #include "EventType.h"
 #include <vector>
 
