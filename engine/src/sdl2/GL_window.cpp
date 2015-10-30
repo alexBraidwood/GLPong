@@ -6,13 +6,30 @@
 
 using namespace engine::sdl2;
 
-GL_window::GL_window(sdl_window_handle window_handle)
-        : window{std::move(window_handle)},
-          renderer_{new Renderer},
-          key_event_listener_{new SdlKeyEvent}
+GL_window::GL_window(std::unique_ptr<SDL_window> window_handle)
+        :   window{std::move(window_handle)},
+            renderer_{new Renderer},
+            key_event_listener_{new SdlKeyEvent}
 {
-    sdl_gl_context = window->create_GL_context();
+    if (window) {
+        create_context();
+    }
     renderer_->Init();
+}
+
+GL_window::~GL_window()
+{
+    if (sdl_gl_context != nullptr) {
+        SDL_GL_DeleteContext(sdl_gl_context);
+    }
+}
+
+auto GL_window::create_context() -> void
+{
+    auto glContext = SDL_GL_CreateContext(window->get());
+    if (glContext == nullptr) {
+        // TODO(): Handle the error here
+    }
 }
 
 auto GL_window::get() const -> SDL_GLContext
@@ -25,7 +42,7 @@ auto GL_window::reset(const SDL_GLContext context) -> void
     sdl_gl_context = context;
 }
 
-auto GL_window::SDL_window() const -> sdl2::SDL_window&
+auto GL_window::get_sdl_window() const -> SDL_window&
 {
     return *window;
 }
@@ -58,15 +75,16 @@ GL_window& GL_window::operator=(GL_window&& window)
 {
     if (this != &window) {
         this->sdl_gl_context = window.get();
-        this->SDL_window().reset(window.SDL_window().get());
-        window.SDL_window().reset(nullptr);
+        this->window->reset(window.get_sdl_window().get());
+        window.get_sdl_window().reset(nullptr);
         window.reset(nullptr);
     }
     return *this;
 }
 GL_window::GL_window(GL_window&& window)
-    : sdl_gl_context{window.get()},
-      window{std::move(window.SDL_window())}
+    : sdl_gl_context{window.get()}
 {
+    this->window->reset(window.get_sdl_window().get());
     window.reset(nullptr);
+    window.get_sdl_window().reset(nullptr);
 }

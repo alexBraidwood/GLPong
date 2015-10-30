@@ -1,0 +1,28 @@
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f477b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f477b.dir/build.make CMakeFiles/cmTC_f477b.dir/build
+make[1]: Entering directory '/home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f477b.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f477b.dir/CheckIncludeFiles.c.o   -c /home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_f477b
+/home/batty-alex/clion-1.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f477b.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_f477b.dir/CheckIncludeFiles.c.o  -o cmTC_f477b -rdynamic 
+make[1]: Leaving directory '/home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1c817/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1c817.dir/build.make CMakeFiles/cmTC_1c817.dir/build
+make[1]: Entering directory '/home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1c817.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1c817.dir/CheckFunctionExists.c.o   -c /home/batty-alex/clion-1.1.1/bin/cmake/share/cmake-3.3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1c817
+/home/batty-alex/clion-1.1.1/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c817.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_1c817.dir/CheckFunctionExists.c.o  -o cmTC_1c817 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/batty-alex/my_first_game_engine/build/CMakeFiles/CMakeTmp'
+
+

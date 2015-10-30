@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
-project(my_first_game_engine)
+project(FireEngine)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${prototype_action_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${FireEngine_SOURCE_DIR}/cmake")
 
 include_directories(include)
 
@@ -38,10 +38,10 @@ set(SOURCES
         include/GL/glew.h
         include/GL/glxew.h
         include/GL/wglew.h
-        include/components/GraphicsComponent.h
+        include/Components/GraphicsComponent.h
         include/Renderer.h
         include/Game.h
-        include/graphics/SOIL.h
+        include/Graphics/SOIL.h
         include/sdl2/Keycode.h
         include/sdl2/SDL_window.h
         src/sdl2/SDL_window.cpp)

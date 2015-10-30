@@ -24,8 +24,7 @@ public:
 protected:
 
 private:
-    sdl2::sdl_window_handle window;
-    sdl2::gl_window gl_window;
+    std::unique_ptr<sdl2::GL_window> gl_window;
     bool is_running;
 };
 }

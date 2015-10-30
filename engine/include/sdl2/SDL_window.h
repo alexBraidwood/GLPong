@@ -14,12 +14,11 @@ namespace sdl2 {
 class SDL_window {
 
 public:
-    SDL_window();
+    SDL_window(SDL_Window* handle);
     virtual ~SDL_window();
 
     SDL_Window* get() const;
     void reset(SDL_Window* window);
-    void create();
     SDL_GLContext create_GL_context() const;
 
     SDL_window(const SDL_window&) = delete;
@@ -28,21 +27,10 @@ public:
     SDL_window(SDL_window&&);
     SDL_window& operator=(SDL_window&&);
 
-
+    static std::unique_ptr<SDL_window> create(int height, int width);
 private:
     SDL_Window* window_handle;
 };
-
-struct SDL_window_deleter {
-  auto operator()(SDL_window* window) -> void
-  {
-      if (window->get() != nullptr) {
-          SDL_DestroyWindow(window->get());
-      }
-  }
-};
-
-using sdl_window_handle = std::unique_ptr<SDL_window, SDL_window_deleter>;
 
 }
 }

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(engine_tests)
+project(FireEngine)
 
 include_directories(include)
 

@@ -9,10 +9,9 @@ using namespace engine;
 using namespace engine::sdl2;
 
 Game::Game()
-        : window{new SDL_window}
 {
-    window->create();
-    gl_window = std::move(std::unique_ptr<GL_window, GL_window_deleter>(new GL_window{std::move(window)}));
+    auto window = SDL_window::create(800, 600);
+    gl_window.reset(new GL_window(std::move(window)));
     is_running = true;
 }
 
