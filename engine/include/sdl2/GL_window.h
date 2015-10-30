@@ -6,7 +6,7 @@
 #define ENGINE_SDL2_GLWINDOW
 
 #include "SdlKeyEvent.h"
-#include "SDL_window.h"
+#include "sdl2/SDL_window.h"
 #include "Renderer.h"
 #include "Keycode.h"
 
@@ -16,30 +16,36 @@
 
 namespace engine {
 namespace sdl2 {
+
 class GL_window {
 public:
-    GL_window(sdl_window window);
+    GL_window(sdl_window_handle window_handle);
     void update();
-    virtual ~GL_window();
+    virtual ~GL_window() {};
 
     SDL_GLContext get() const;
+    void reset(SDL_GLContext context);
+
+    sdl2::SDL_window& SDL_window() const;
 
     Keycode last_key_pressed() const;
 
+    GL_window& operator=(GL_window&&);
+    GL_window(GL_window&&);
+
 private:
-    // TODO(): Wrap me up in a data structure, I'm a void pointer on the inside!
-    SDL_GLContext sdl_gl_context_;
-    bool loaded_successfully_;
+    SDL_GLContext sdl_gl_context;
+    bool loaded_successfully;
 
     std::unique_ptr<SdlKeyEvent> key_event_listener_;
-    sdl_window window;
+    sdl_window_handle window;
     std::unique_ptr<Renderer> renderer_;
 };
 
 struct GL_window_deleter {
   auto operator()(GL_window* window) -> void
   {
-      SDL_GL_DeleteContext(window);
+      SDL_GL_DeleteContext(window->get());
   }
 };
 

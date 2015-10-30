@@ -8,11 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/engine/include/GL/glxew.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/GL/wglew.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/Game.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/Observer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/Renderer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/engine/include/SDL_exception.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/Subject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/components/GraphicsComponent.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/engine/include/exception/engine_exception.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/graphics/SOIL.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/EventType.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/engine/include/sdl2/GL_window.h" isTestSource="false" />

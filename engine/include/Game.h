@@ -6,10 +6,10 @@
 #define ENGINE_GAME
 
 #include "Renderer.h"
-#include "GL_window.h"
 #include "Subject.h"
 #include <map>
 #include "sdl2/SDL_window.h"
+#include "sdl2/GL_window.h"
 
 namespace engine {
 
@@ -24,8 +24,8 @@ public:
 protected:
 
 private:
-    sdl2::sdl_window window;
-    gl_window gl_window;
+    sdl2::sdl_window_handle window;
+    sdl2::gl_window gl_window;
     bool is_running;
 };
 }
