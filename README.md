@@ -1,8 +1,8 @@
-# Personal Game Engine
-Personal game engine for fiddling with 2d / 3d math, algorithms, and learning.
+# GLPong
+Pong game for getting aquainted with OpenGL, Image Loading, Physics, Input, etc. All from scratch.
 
 ## Overall Goal
-To provide a simple, open-source, base engine for accomplishing simple 2d or 3d games with the ability to easily extend beyond the most basic of engine features. This is engine is meant to be somewhere in between LÖVE and Godot in terms of usability and complexity.
+To provide a simple, open-source, pong clone that uses OpenGL and can deploy to a variety of devices
 
 # Requirements
 ###SDL2
@@ -11,7 +11,7 @@ To provide a simple, open-source, base engine for accomplishing simple 2d or 3d 
 
 # Roadmap
 
-### Basic Engine Features (Planned)
+### Basic Features (Planned)
 <ul>
 <li>OpenGL Graphics </li>
 <li>OpenGL-based texturing and sprites </li>
@@ -22,8 +22,6 @@ To provide a simple, open-source, base engine for accomplishing simple 2d or 3d 
 <li>All open-source library backing</li>
 </ul>
 
-### Advanced Engine Features (Planned)
+### Advanced Features (Planned)
 <li>Android, iOS, WP, Linux, and OSX support</li>
-<li>Lua for gameplay scripting</li>
-<li>Visual editor for 2d and 3d art</li>
-<li>Open-source toolchain support (Tiled, Spriter, Blender, Inkscape, OGG, etc.)</li>
+

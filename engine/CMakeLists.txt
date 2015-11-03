@@ -63,9 +63,10 @@ DESTINATION .)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_executable(my_first_game_engine ${SOURCES})
+add_executable(FireEngine ${SOURCES} src/graphics/Texture2d.cpp include/engine/graphics/Texture2d.h include/engine/graphics/Textures.h)
+add_library(FireEngineLib ${SOURCES})
 if (WIN32)
-    target_link_libraries(my_first_game_engine ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
+    target_link_libraries(FireEngine ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
 else()
-    target_link_libraries(my_first_game_engine ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
+    target_link_libraries(FireEngine ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
 endif()
