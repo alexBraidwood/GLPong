@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
-project(FireEngine)
+project(GLPong)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${FireEngine_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GLPong_SOURCE_DIR}/cmake")
 
 include_directories(include)
 include_directories(include/engine)
@@ -31,6 +31,7 @@ set(SOURCES
         src/external/glew/glew.c
         src/engine/sdl2/GL_window.cpp
         src/engine/sdl2/SdlKeyEvent.cpp
+        include/engine/graphics/Rect.h
         include/engine/sdl2/ListenerType.h
         include/engine/sdl2/EventType.h
         include/engine/sdl2/SdlKeyEvent.h
@@ -44,7 +45,10 @@ set(SOURCES
         include/external/graphics/SOIL.h
         include/engine/sdl2/Keycode.h
         include/engine/sdl2/SDL_window.h
-        src/engine/sdl2/SDL_window.cpp)
+        src/engine/sdl2/SDL_window.cpp
+        src/graphics/Texture2d.cpp
+        include/engine/graphics/Texture2d.h
+        include/engine/graphics/Textures.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
@@ -63,10 +67,10 @@ DESTINATION .)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_executable(FireEngine ${SOURCES} src/graphics/Texture2d.cpp include/engine/graphics/Texture2d.h include/engine/graphics/Textures.h)
-add_library(FireEngineLib ${SOURCES})
+add_executable(GLPong ${SOURCES})
+add_library(GLPongTest ${SOURCES})
 if (WIN32)
-    target_link_libraries(FireEngine ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
+    target_link_libraries(GLPong ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
 else()
-    target_link_libraries(FireEngine ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
+    target_link_libraries(GLPong ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
 endif()

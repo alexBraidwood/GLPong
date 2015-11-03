@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(FireEngine)
+project(GLPong)
 
 include_directories(include)
 

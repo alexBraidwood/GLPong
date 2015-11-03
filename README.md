@@ -23,5 +23,7 @@ To provide a simple, open-source, pong clone that uses OpenGL and can deploy to 
 </ul>
 
 ### Advanced Features (Planned)
+<ul>
 <li>Android, iOS, WP, Linux, and OSX support</li>
+</ul>
 

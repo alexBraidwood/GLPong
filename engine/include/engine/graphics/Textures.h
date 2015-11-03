@@ -13,7 +13,11 @@ namespace graphics {
 
 template <typename T>
 std::unique_ptr<T> LoadTexture(const std::string& path) const {
-    auto image = SOIL_load_image(path.c_str(), 0, 0, 0, SOIL_LOAD_RGB);
+    int width;
+    int height;
+
+    auto image = SOIL_load_image(path.c_str(), &width, &height, 0, SOIL_LOAD_RGB);
+    T::create(image);
 }
 
 }
