@@ -47,11 +47,6 @@ auto GL_window::get_sdl_window() const -> SDL_window&
     return *window;
 }
 
-auto GL_window::last_key_pressed() const -> Keycode
-{
-    return FromSdlKeycode(key_event_listener_->key_pressed());
-}
-
 auto GL_window::update() -> void
 {
     SDL_GL_SwapWindow(window->get());

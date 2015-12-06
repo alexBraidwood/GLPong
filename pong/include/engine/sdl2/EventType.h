@@ -51,6 +51,12 @@ enum class EventType {
     FileDropEvent = SDL_DROPFILE,
     RenderTargetsReset = SDL_RENDER_TARGETS_RESET
 };
+
+inline EventType from_SDL_event_type(Uint32 type)
+{
+    return static_cast<EventType>(type);
+}
+
 }
 }
 

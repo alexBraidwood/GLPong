@@ -6,10 +6,10 @@
 #define ENGINE_GAME
 
 #include "Renderer.h"
-#include "events/Subject.h"
 #include <map>
 #include "sdl2/SDL_window.h"
 #include "sdl2/GL_window.h"
+#include "Eventhandler.h"
 
 namespace engine {
 
@@ -24,7 +24,8 @@ public:
 protected:
 
 private:
-    std::unique_ptr<sdl2::GL_window> gl_window;
+    std::unique_ptr<sdl2::SDL_window> window;
+    std::unique_ptr<Event_handler> handler;
     bool is_running;
 };
 }

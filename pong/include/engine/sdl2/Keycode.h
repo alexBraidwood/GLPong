@@ -26,7 +26,7 @@ enum class Keycode {
     Quote = SDLK_QUOTE
 };
 
-inline Keycode FromSdlKeycode(SDL_Keycode keycode)
+inline Keycode from_sdl_keycode(SDL_Keycode keycode)
 {
     return static_cast<Keycode>(keycode);
 }

@@ -51,7 +51,7 @@ extern "C" {
  *  \brief  A variable controlling how 3D acceleration is used to accelerate the SDL screen surface.
  *
  *  SDL can try to accelerate the SDL screen surface by using streaming
- *  textures with a 3D rendering engine.  This variable controls whether and
+ *  textures with a 3D rendering pong.  This variable controls whether and
  *  how this is done.
  *
  *  This variable can be set to the following values:

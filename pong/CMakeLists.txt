@@ -1,6 +1,16 @@
 cmake_minimum_required(VERSION 3.2)
 project(GLPong)
 
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message("64 bit compiler")
+    set(EX_PLATFORM 64)
+    set(EX_PLATFORM_NAME "x64")
+else(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message("32 bit compiler")
+    set(EX_PLATFORM 32)
+    set(EX_PLATFORM_NAME "x86")
+endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${GLPong_SOURCE_DIR}/cmake")
 
 include_directories(include)
@@ -10,9 +20,15 @@ include_directories(include/external)
 find_package(OpenGL REQUIRED)
 
 if (WIN32)
-    include_directories(SDL2/i686-w64-mingw32/include/SDL2)
-    set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
-    link_directories(SDL2/i686-w64-mingw32/lib)
+    if(EX_PLATFORM EQUAL 64)
+        include_directories(SDL2/x86_64-w64-mingw32/include/SDL2)
+        link_directories(SDL2/x86_64-w64-mingw32/lib)
+        set(BINARIES SDL2/x86_64-w64-mingw32/bin/SDL2.dll)
+    else(EX_PLATFORM EQUAL 64)
+        include_directories(SDL2/i686-w64-mingw32/include/SDL2)
+        set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
+        link_directories(SDL2/i686-w64-mingw32/lib)
+    endif(EX_PLATFORM EQUAL 64)
     link_directories(SOIL)
     set(LINK_OPTIONS mingw32 SDL2Main SDL2)
     add_definitions(-DGLEW_STATIC)
@@ -35,7 +51,6 @@ set(SOURCES
         include/engine/sdl2/ListenerType.h
         include/engine/sdl2/EventType.h
         include/engine/sdl2/SdlKeyEvent.h
-        include/engine/events/Subject.h
         include/engine/sdl2/GL_window.h
         include/external/GL/glew.h
         include/external/GL/glxew.h
@@ -48,7 +63,8 @@ set(SOURCES
         src/engine/sdl2/SDL_window.cpp
         src/graphics/Texture2d.cpp
         include/engine/graphics/Texture2d.h
-        include/engine/graphics/Textures.h)
+        include/engine/graphics/Textures.h
+        src/engine/Eventhandler.cpp)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
@@ -68,7 +84,7 @@ DESTINATION .)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 add_executable(GLPong ${SOURCES})
-add_library(GLPongTest ${SOURCES})
+
 if (WIN32)
     target_link_libraries(GLPong ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
 else()

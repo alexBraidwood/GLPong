@@ -28,8 +28,6 @@ public:
 
     SDL_window& get_sdl_window() const;
 
-    Keycode last_key_pressed() const;
-
     GL_window& operator=(GL_window&&);
     GL_window(GL_window&&);
 

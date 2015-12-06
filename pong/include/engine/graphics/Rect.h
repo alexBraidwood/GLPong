@@ -21,9 +21,6 @@ struct Rect {
     float x;
     float y;
 
-    GLuint get_vao() {
-
-    }
 };
 }
 }
