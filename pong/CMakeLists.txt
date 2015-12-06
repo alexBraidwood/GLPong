@@ -47,24 +47,10 @@ set(SOURCES
         src/external/glew/glew.c
         src/engine/sdl2/GL_window.cpp
         src/engine/sdl2/SdlKeyEvent.cpp
-        include/engine/graphics/Rect.h
-        include/engine/sdl2/ListenerType.h
-        include/engine/sdl2/EventType.h
-        include/engine/sdl2/SdlKeyEvent.h
-        include/engine/sdl2/GL_window.h
-        include/external/GL/glew.h
-        include/external/GL/glxew.h
-        include/external/GL/wglew.h
-        include/engine/Renderer.h
-        include/engine/Game.h
-        include/external/graphics/SOIL.h
-        include/engine/sdl2/Keycode.h
-        include/engine/sdl2/SDL_window.h
         src/engine/sdl2/SDL_window.cpp
         src/graphics/Texture2d.cpp
-        include/engine/graphics/Texture2d.h
-        include/engine/graphics/Textures.h
-        src/engine/Eventhandler.cpp)
+        src/engine/Eventhandler.cpp
+        src/engine/sdl2/SDL_renderer.cpp src/engine/sdl2/SDL_texture.cpp)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})

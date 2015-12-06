@@ -6,11 +6,11 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
-      <config projectName="FireEngine" targetName="FireEngine" />
+      <config projectName="prototype_action" targetName="prototype_action" />
       <config projectName="my_first_game_engine" targetName="my_first_game_engine" />
       <config projectName="FireEngine" targetName="my_first_game_engine" />
       <config projectName="GLPong" targetName="GLPong" />
-      <config projectName="prototype_action" targetName="prototype_action" />
+      <config projectName="FireEngine" targetName="FireEngine" />
       <config projectName="GLPong" targetName="engine_tests" />
       <config projectName="FireEngine" targetName="FireEngineLib" />
       <config projectName="GLPong" targetName="GLPongTest" />
@@ -23,189 +23,19 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24d2eea4-4514-46af-a65a-2ed6fd646406" name="Default" comment="Added Test project and restructured code organization to allow for subprojects. Added gtest and gmock to engine_tests.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/include/engine/EventHandler.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/engine/include/engine/events/Subject.h" afterPath="" />
+    <list default="true" id="24d2eea4-4514-46af-a65a-2ed6fd646406" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_renderer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_surface.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_texture.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/src/engine/sdl2/SDL_renderer.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pong/src/engine/sdl2/SDL_texture.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/prototype_action.iml" afterPath="$PROJECT_DIR$/.idea/prototype_action.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/CMakeLists.txt" afterPath="$PROJECT_DIR$/pong/CMakeLists.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/bin/SDL2.dll" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/bin/SDL2.dll" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/bin/sdl2-config" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/bin/sdl2-config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_assert.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_assert.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_atomic.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_atomic.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_audio.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_audio.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_bits.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_bits.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_blendmode.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_blendmode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_clipboard.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_clipboard.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_config.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_config.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_cpuinfo.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_cpuinfo.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_endian.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_endian.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_error.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_error.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_events.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_events.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_filesystem.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_filesystem.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_gamecontroller.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_gamecontroller.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_gesture.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_gesture.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_haptic.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_haptic.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_hints.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_hints.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_joystick.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_joystick.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_keyboard.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_keyboard.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_keycode.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_keycode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_loadso.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_loadso.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_log.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_log.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_main.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_main.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_messagebox.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_messagebox.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_mouse.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_mouse.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_mutex.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_mutex.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_name.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_name.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_opengl.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_opengl.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_opengles.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_opengles.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_opengles2.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_opengles2.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_pixels.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_pixels.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_platform.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_platform.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_power.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_power.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_quit.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_quit.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_rect.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_rect.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_render.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_render.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_revision.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_revision.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_rwops.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_rwops.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_scancode.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_scancode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_shape.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_shape.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_stdinc.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_stdinc.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_surface.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_surface.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_system.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_system.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_syswm.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_syswm.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_assert.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_assert.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_common.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_common.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_compare.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_compare.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_crc32.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_crc32.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_font.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_font.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_fuzzer.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_fuzzer.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_harness.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_harness.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_images.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_images.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_log.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_log.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_md5.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_md5.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_random.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_test_random.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_thread.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_thread.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_timer.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_timer.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_touch.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_touch.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_types.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_types.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_version.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_version.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/SDL_video.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_video.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/begin_code.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/begin_code.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/include/SDL2/close_code.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/close_code.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/lib/libSDL2.a" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/lib/libSDL2.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/lib/libSDL2.dll.a" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/lib/libSDL2.dll.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/lib/libSDL2.la" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/lib/libSDL2.la" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/lib/libSDL2_test.a" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/lib/libSDL2_test.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/lib/libSDL2main.a" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/lib/libSDL2main.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/lib/pkgconfig/sdl2.pc" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/lib/pkgconfig/sdl2.pc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/i686-w64-mingw32/share/aclocal/sdl2.m4" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/share/aclocal/sdl2.m4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/bin/SDL2.dll" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/bin/SDL2.dll" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/bin/sdl2-config" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/bin/sdl2-config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_assert.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_assert.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_atomic.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_audio.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_audio.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_bits.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_bits.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_blendmode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_clipboard.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_config.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_config.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_cpuinfo.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_endian.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_endian.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_error.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_error.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_events.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_events.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_filesystem.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_gamecontroller.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_gesture.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_haptic.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_hints.h" afterPath="$PROJECT_DIR$/pong/SDL2/i686-w64-mingw32/include/SDL2/SDL_hints.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_joystick.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_keyboard.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_keycode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_loadso.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_log.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_log.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_main.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_main.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_messagebox.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_mouse.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_mutex.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_name.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_name.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_opengl.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_opengl.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_opengles.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_opengles.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_opengles2.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_opengles2.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_pixels.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_platform.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_platform.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_power.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_power.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_quit.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_quit.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_rect.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_rect.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_render.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_render.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_revision.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_revision.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_rwops.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_scancode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_shape.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_shape.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_stdinc.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_surface.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_surface.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_system.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_system.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_syswm.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_syswm.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_assert.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_assert.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_common.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_common.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_compare.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_compare.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_crc32.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_crc32.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_font.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_font.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_fuzzer.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_fuzzer.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_harness.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_harness.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_images.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_images.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_log.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_log.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_md5.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_md5.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_random.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_test_random.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_thread.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_thread.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_timer.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_timer.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_touch.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_touch.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_types.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_types.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_version.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_version.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_video.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/SDL_video.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/begin_code.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/begin_code.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/include/SDL2/close_code.h" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/include/SDL2/close_code.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/lib/libSDL2.a" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/lib/libSDL2.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/lib/libSDL2.dll.a" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/lib/libSDL2.dll.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/lib/libSDL2.la" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/lib/libSDL2.la" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/lib/libSDL2_test.a" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/lib/libSDL2_test.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/lib/libSDL2main.a" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/lib/libSDL2main.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/lib/pkgconfig/sdl2.pc" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/lib/pkgconfig/sdl2.pc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SDL2/x86_64-w64-mingw32/share/aclocal/sdl2.m4" afterPath="$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/share/aclocal/sdl2.m4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/SOIL/libSOIL.a" afterPath="$PROJECT_DIR$/pong/SOIL/libSOIL.a" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/Shaders/fragment_shader.glsl" afterPath="$PROJECT_DIR$/pong/Shaders/fragment_shader.glsl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/Shaders/vertex_shader.glsl" afterPath="$PROJECT_DIR$/pong/Shaders/vertex_shader.glsl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/cmake/FindSDL2.cmake" afterPath="$PROJECT_DIR$/pong/cmake/FindSDL2.cmake" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/Game.h" afterPath="$PROJECT_DIR$/pong/include/engine/Game.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/Renderer.h" afterPath="$PROJECT_DIR$/pong/include/engine/Renderer.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/graphics/Rect.h" afterPath="$PROJECT_DIR$/pong/include/engine/graphics/Rect.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/graphics/Texture2d.h" afterPath="$PROJECT_DIR$/pong/include/engine/graphics/Texture2d.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/graphics/Textures.h" afterPath="$PROJECT_DIR$/pong/include/engine/graphics/Textures.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/sdl2/EventType.h" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/EventType.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/sdl2/GL_window.h" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/GL_window.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/sdl2/Keycode.h" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/Keycode.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/sdl2/ListenerType.h" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/ListenerType.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/sdl2/SDL_window.h" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_window.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/engine/sdl2/SdlKeyEvent.h" afterPath="$PROJECT_DIR$/pong/include/engine/sdl2/SdlKeyEvent.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/external/GL/glew.h" afterPath="$PROJECT_DIR$/pong/include/external/GL/glew.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/external/GL/glxew.h" afterPath="$PROJECT_DIR$/pong/include/external/GL/glxew.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/external/GL/wglew.h" afterPath="$PROJECT_DIR$/pong/include/external/GL/wglew.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/include/external/graphics/SOIL.h" afterPath="$PROJECT_DIR$/pong/include/external/graphics/SOIL.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/engine/Game.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/Game.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/engine/Renderer.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/Renderer.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/engine/sdl2/GL_window.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/sdl2/GL_window.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/engine/sdl2/SDL_window.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/sdl2/SDL_window.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/engine/sdl2/SdlKeyEvent.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/external/glew/glew.c" afterPath="$PROJECT_DIR$/pong/src/external/glew/glew.c" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/external/glew/glewinfo.c" afterPath="$PROJECT_DIR$/pong/src/external/glew/glewinfo.c" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/external/glew/visualinfo.c" afterPath="$PROJECT_DIR$/pong/src/external/glew/visualinfo.c" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/graphics/Texture2d.cpp" afterPath="$PROJECT_DIR$/pong/src/graphics/Texture2d.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/engine/src/main.cpp" afterPath="$PROJECT_DIR$/pong/src/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pong/CMakeLists.txt" afterPath="$PROJECT_DIR$/pong/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pong/include/engine/EventHandler.h" afterPath="$PROJECT_DIR$/pong/include/engine/EventHandler.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pong/include/engine/Game.h" afterPath="$PROJECT_DIR$/pong/include/engine/Game.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pong/src/engine/Game.cpp" afterPath="$PROJECT_DIR$/pong/src/engine/Game.cpp" />
     </list>
     <ignored path="prototype_action.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -221,15 +51,25 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="2">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="SdlKeyEvent.cpp" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp">
+            <file leaf-file-name="SDL_texture.h" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_texture.h">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.28936172">
-                    <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+                    <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="SDL_texture.cpp" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_texture.cpp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -246,14 +86,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pong/include/engine/Game.h">
+      <file leaf-file-name="Game.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pong/src/engine/Game.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63829786">
-              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.75622773">
+              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SDL_renderer.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_renderer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
               <folding>
-                <element signature="e#78#99#0" expanded="true" />
+                <element signature="e#103#119#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SDL_renderer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_renderer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -271,12 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/engine/src/sdl2/SdlKeyEvent.cc" />
-        <option value="$PROJECT_DIR$/engine/src/main.cc" />
-        <option value="$PROJECT_DIR$/engine/src/engine/Renderer.cc" />
-        <option value="$PROJECT_DIR$/engine/src/sdl2/GLWindow.cpp" />
-        <option value="$PROJECT_DIR$/engine/include/sdl2/EventType.h" />
-        <option value="$PROJECT_DIR$/engine/src/sdl2/SDLWindow.cpp" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/Keycode.h" />
         <option value="$PROJECT_DIR$/engine/include/sdl2/ListenerType.h" />
         <option value="$PROJECT_DIR$/engine/include/Renderer.h" />
@@ -310,18 +164,24 @@
         <option value="$PROJECT_DIR$/engine/src/main.cpp" />
         <option value="$PROJECT_DIR$/pong/include/engine/EventHandler.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/pong/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/pong/include/engine/Game.h" />
         <option value="$PROJECT_DIR$/pong/include/engine/sdl2/Keycode.h" />
         <option value="$PROJECT_DIR$/pong/include/engine/sdl2/EventType.h" />
-        <option value="$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp" />
         <option value="$PROJECT_DIR$/pong/include/engine/sdl2/SdlKeyEvent.h" />
         <option value="$PROJECT_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp" />
-        <option value="$PROJECT_DIR$/pong/src/engine/Game.cpp" />
-        <option value="$PROJECT_DIR$/pong/include/engine/Eventhandler.h" />
         <option value="$PROJECT_DIR$/pong/src/engine/sdl2/GL_window.cpp" />
         <option value="$PROJECT_DIR$/pong/include/engine/sdl2/GL_window.h" />
         <option value="$PROJECT_DIR$/pong/include/engine/graphics/Rect.h" />
+        <option value="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_surface.h" />
+        <option value="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_texture.h" />
+        <option value="$PROJECT_DIR$/pong/include/engine/Eventhandler.h" />
+        <option value="$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp" />
+        <option value="$PROJECT_DIR$/pong/include/engine/Game.h" />
+        <option value="$PROJECT_DIR$/pong/src/engine/SDL_renderer.cpp" />
+        <option value="$PROJECT_DIR$/pong/src/engine/Game.cpp" />
+        <option value="$PROJECT_DIR$/pong/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/pong/src/engine/sdl2/SDL_texture.cpp" />
+        <option value="$PROJECT_DIR$/pong/include/engine/sdl2/SDL_renderer.h" />
+        <option value="$PROJECT_DIR$/pong/src/engine/sdl2/SDL_renderer.cpp" />
       </list>
     </option>
   </component>
@@ -441,7 +301,103 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype_action" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_first_game_engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sdl2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype_action" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_first_game_engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype_action" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_first_game_engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prototype_action" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_first_game_engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sdl2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,16 +413,16 @@
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
+      <recent name="C:\Users\alz12_000\Dropbox\dev\GameDev\prototype_action\SDL2\i686-w64-mingw32" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\dev\my_first_game_engine\pong\src\engine\sdl2" />
       <recent name="E:\dev\my_first_game_engine\engine\include\engine\graphics" />
       <recent name="E:\dev\my_first_game_engine\engine\src\graphics" />
       <recent name="E:\dev\my_first_game_engine\engine\src\engine" />
       <recent name="E:\dev\my_first_game_engine\engine\include\engine" />
-      <recent name="E:\dev\my_first_game_engine\engine\src\external" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/include" />
-      <recent name="C:\Users\alz12_000\Dropbox\dev\GameDev\prototype_action\SDL2\i686-w64-mingw32" />
     </key>
   </component>
   <component name="RunManager" selected="Application.GLPong">
@@ -543,7 +499,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443981013008</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Moved away from opengl for now. Getting gameplay together before adding opengl drawing.">
+      <created>1449412568933</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1449412568933</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -557,16 +519,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1265625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1265625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37632135" sideWeight="0.40677083" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37632135" sideWeight="0.40677083" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241014" sideWeight="0.49583334" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32685184" sideWeight="0.50208336" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3245243" sideWeight="0.43541667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3245243" sideWeight="0.43541667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -618,7 +580,8 @@
     <MESSAGE value="Fixed Update loop in renderer. Added Event Handler and Observer for Events. Added EventType for wrapping SDL Events." />
     <MESSAGE value="SdlKeyEvent and ListenerType enums added. Game class now handles Observer Subscription. GLWindow pumps events out to Key Handlers." />
     <MESSAGE value="Added Test project and restructured code organization to allow for subprojects. Added gtest and gmock to engine_tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Test project and restructured code organization to allow for subprojects. Added gtest and gmock to engine_tests." />
+    <MESSAGE value="Moved away from opengl for now. Getting gameplay together before adding opengl drawing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved away from opengl for now. Getting gameplay together before adding opengl drawing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -635,11 +598,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_window.cpp</url>
-          <line>46</line>
-          <option name="timeStamp" value="43" />
+          <line>18</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_window.cpp</url>
+          <line>31</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -650,41 +618,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_window.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/Keycode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong/include/engine/Renderer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pong/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -835,19 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pong/src/engine/Renderer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018085107">
-          <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
-          <folding>
-            <element signature="e#37#58#0" expanded="false" />
-            <element signature="e#1645#2092#0" expanded="false" />
-            <element signature="e#2094#2514#0" expanded="false" />
-            <element signature="e#2516#2979#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pong/SDL2/x86_64-w64-mingw32/bin/sdl2-config">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -897,22 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_window.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#145#220#0" expanded="false" />
-            <element signature="e#222#335#0" expanded="false" />
-            <element signature="e#337#410#0" expanded="false" />
-            <element signature="e#413#1045#0" expanded="false" />
-            <element signature="e#1047#1129#0" expanded="false" />
-            <element signature="e#1132#1286#0" expanded="false" />
-            <element signature="e#1288#1472#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5286416">
@@ -945,14 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37978724">
-          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/Keycode.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5826514">
@@ -969,24 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pong/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36298934">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong/src/engine/Game.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66775775">
-          <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-          <folding>
-            <element signature="e#37#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/GL_window.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58428806">
@@ -995,36 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pong/include/engine/Eventhandler.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19476268">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#103#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/GL_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22422259">
           <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28936172">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_window.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44353518">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1037,13 +889,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_surface.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22258593">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_window.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/Renderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#1645#2092#0" expanded="false" />
+            <element signature="e#2094#2514#0" expanded="false" />
+            <element signature="e#2516#2979#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/include/engine/Eventhandler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24199288">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pong/include/engine/Game.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63829786">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding>
-            <element signature="e#78#99#0" expanded="true" />
+            <element signature="e#78#99#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+          <folding>
+            <element signature="e#145#220#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/Eventhandler.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41734862">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.703704">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_texture.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_texture.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28936172">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/sdl2/SDL_renderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/include/engine/sdl2/SDL_renderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="e#103#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pong/src/engine/Game.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75622773">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

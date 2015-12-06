@@ -4,25 +4,12 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/Game.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/graphics/Rect.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/graphics/Texture2d.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/graphics/Textures.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/Renderer.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/sdl2/EventType.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/sdl2/GL_window.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/sdl2/Keycode.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/sdl2/ListenerType.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/sdl2/SDL_window.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/engine/sdl2/SdlKeyEvent.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/external/GL/glew.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/external/GL/glxew.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/external/GL/wglew.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pong/include/external/graphics/SOIL.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/Eventhandler.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/Game.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/Renderer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/GL_window.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_renderer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_texture.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_window.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/external/glew/glew.c" isTestSource="false" />

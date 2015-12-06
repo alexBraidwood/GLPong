@@ -15,7 +15,7 @@ class Event_handler {
     sdl2::SdlKeyEvent last_key_event_;
 
 public:
-    void handle_event(const SDL_Event& event);
+    void handle_events();
     const sdl2::EventType& last_event() const;
     const sdl2::SdlKeyEvent& last_key_event() const;
 };

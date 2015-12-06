@@ -6,8 +6,10 @@
 
 using namespace engine;
 
-auto Event_handler::handle_event(const SDL_Event& event) -> void
+auto Event_handler::handle_events() -> void
 {
+    SDL_Event event;
+    SDL_PollEvent(&event);
     last_event_type_ = sdl2::from_SDL_event_type(event.type);
     switch(last_event_type_) {
     case sdl2::EventType::KeyPressedEvent:

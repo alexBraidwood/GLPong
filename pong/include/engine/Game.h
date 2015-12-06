@@ -8,7 +8,7 @@
 #include "Renderer.h"
 #include <map>
 #include "sdl2/SDL_window.h"
-#include "sdl2/GL_window.h"
+#include "sdl2/SDL_renderer.h"
 #include "Eventhandler.h"
 
 namespace engine {
@@ -20,12 +20,14 @@ public:
 
 public:
     void Update();
+    void Init();
 
 protected:
 
 private:
     std::unique_ptr<sdl2::SDL_window> window;
-    std::unique_ptr<Event_handler> handler;
+    std::unique_ptr<sdl2::SDL_renderer> renderer;
+    std::unique_ptr<Event_handler> event_handler;
     bool is_running;
 };
 }
