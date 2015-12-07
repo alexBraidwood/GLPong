@@ -2,7 +2,7 @@
 // Created by Maddog on 12/5/2015.
 //
 
-#include <Eventhandler.h>
+#include <EventHandler.h>
 
 using namespace engine;
 

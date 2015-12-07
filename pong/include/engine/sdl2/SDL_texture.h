@@ -5,7 +5,7 @@
 #ifndef GLPONG_SDL_TEXTURE_H
 #define GLPONG_SDL_TEXTURE_H
 
-#include <sdl.h>
+#include <SDL.h>
 #include <string>
 
 namespace engine {

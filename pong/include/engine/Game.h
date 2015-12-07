@@ -9,7 +9,7 @@
 #include <map>
 #include "sdl2/SDL_window.h"
 #include "sdl2/SDL_renderer.h"
-#include "Eventhandler.h"
+#include "EventHandler.h"
 
 namespace engine {
 

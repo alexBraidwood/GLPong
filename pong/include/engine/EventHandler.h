@@ -5,7 +5,7 @@
 #ifndef GLPONG_EVENTHANDLER_H
 #define GLPONG_EVENTHANDLER_H
 
-#include <sdl.h>
+#include <SDL.h>
 #include <sdl2/SdlKeyEvent.h>
 #include <sdl2/EventType.h>
 
