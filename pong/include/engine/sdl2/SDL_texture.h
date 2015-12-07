@@ -6,17 +6,25 @@
 #define GLPONG_SDL_TEXTURE_H
 
 #include <SDL.h>
+#include <memory>
 #include <string>
+#include <graphics/Rect.h>
 
 namespace engine {
 namespace sdl2 {
 class SDL_texture {
     SDL_Texture* texture_handle;
+    Rect source_rectangle;
+    Rect destination_rectangle;
     std::string image_path_;
 
     // Texture-specific code
 public:
-    void image_path(const std::string& path);
+    void set_image(
+            const std::string& path,
+            const Rect& sourceRect = nullptr,
+            const Rect& destRect = nullptr);
+
     const std::string& image_path();
 
     // RAII and initialization code
@@ -32,6 +40,10 @@ public:
 
     SDL_texture(SDL_texture&&);
     SDL_texture& operator=(SDL_texture&&);
+
+    static std::unique_ptr<SDL_texture> create(const std::string& path,
+            const Rect& source = nullptr,
+            const Rect& destination = nullptr);
 };
 }
 }

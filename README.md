@@ -5,10 +5,10 @@ Pong game for getting aquainted with OpenGL, Image Loading, Physics, Input, etc.
 To provide a simple, open-source, pong clone that uses OpenGL and can deploy to a variety of devices
 
 # Requirements
-###SDL2 ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
-###SDL2-image ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
-###GLEW ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
-###SOIL ([Public Domain](http://www.lonesock.net/soil.html))
+###[SDL2](https://www.libsdl.org/license.php) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
+###[SDL2_image](https://www.libsdl.org/projects/SDL_image/) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
+###[GLEW](http://glew.sourceforge.net/) ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
+###[SOIL](http://www.lonesock.net/soil.html) (Public Domain)
 
 # Roadmap
 
@@ -27,12 +27,13 @@ To provide a simple, open-source, pong clone that uses OpenGL and can deploy to 
 <ul>
 <li>OpenGL Graphics </li>
 <li>OpenGL-based texturing and sprites </li>
-<li>OpenGL 2d/3d drawing </li>
+<li>OpenGL 2D/3D drawing </li>
 <li>Audio </li>
+<li>Linux Support </li>
 </ul>
 
 ### Advanced Features (Planned)
 <ul>
-<li>Android, iOS, WP, Linux, and OSX support</li>
+<li>Android, iOS, WP, and OSX support</li>
 </ul>
 

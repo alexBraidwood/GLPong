@@ -5,6 +5,21 @@
 #include <sdl2/SDL_texture.h>
 
 using namespace engine::sdl2;
+using namespace engine::graphics;
+
+auto SDL_texture::create(const std::string& path, const Rect& source,
+        const Rect& destination) -> std::unique_ptr<SDL_texture>
+{
+    
+}
+
+auto SDL_texture::set_image(const std::string& path, const Rect& sourceRect,
+        const Rect& destRect) -> void
+{
+    image_path_ = path;
+    source_rectangle = sourceRect;
+    destination_rectangle = destRect;
+}
 
 SDL_texture::SDL_texture(SDL_Texture* handle)
     : texture_handle{handle} {}
