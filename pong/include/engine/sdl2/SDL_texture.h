@@ -25,7 +25,7 @@ public:
     virtual ~SDL_texture();
 
     SDL_Texture* get() const;
-    void reset(SDL_Texture* renderer);
+    void reset(SDL_Texture* texture);
 
     SDL_texture(const SDL_texture&) = delete;
     SDL_texture& operator=(const SDL_texture&) = delete;

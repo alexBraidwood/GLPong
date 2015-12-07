@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/Renderer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/GL_window.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_renderer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_surface.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_texture.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SDL_window.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/engine/sdl2/SdlKeyEvent.cpp" isTestSource="false" />
