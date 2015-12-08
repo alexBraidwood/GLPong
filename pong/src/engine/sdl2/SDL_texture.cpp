@@ -10,7 +10,7 @@ using namespace engine::graphics;
 auto SDL_texture::create(const std::string& path, const Rect& source,
         const Rect& destination) -> std::unique_ptr<SDL_texture>
 {
-    
+
 }
 
 auto SDL_texture::set_image(const std::string& path, const Rect& sourceRect,
