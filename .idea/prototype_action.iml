@@ -16,6 +16,7 @@
       <sourceFolder url="file://$MODULE_DIR$/pong/src/external/glew/glew.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/graphics/Texture2d.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pong/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pong/src/pong/Paddle.cpp" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

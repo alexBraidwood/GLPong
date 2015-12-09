@@ -3,7 +3,8 @@
 //
 
 #include "Game.h"
-#include "sdl2/SDL_window.h"
+#include <pong/Paddle.h>
+
 
 using namespace engine;
 using namespace engine::sdl2;
@@ -19,6 +20,7 @@ Game::Game()
 auto Game::Init() -> void
 {
     renderer->set_render_color(0xFF, 0xFF, 0xFF);
+    game_objects.push_back(std::make_unique<pong::Paddle>());
 }
 
 auto Game::Update() -> void
@@ -30,6 +32,10 @@ auto Game::Update() -> void
                 || event_handler->last_key_event() == Keycode::Escape) {
             SDL_Quit();
             is_running = false;
+        }
+        for (auto& object : game_objects) {
+            object->do_update();
+            object->do_draw();
         }
         renderer->end_render();
     }
