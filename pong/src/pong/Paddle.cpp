@@ -38,7 +38,7 @@ auto Paddle::draw() -> void
 
 auto Paddle::update() -> void
 {
-    
+
 }
 
 
