@@ -35,8 +35,10 @@ auto Game::Update() -> void
         }
         for (auto& object : game_objects) {
             object->do_update();
-            object->do_draw();
+            object->do_draw(*renderer);
         }
+        renderer->set_render_color(0xFF, 0xFF, 0x00, 0xFF);
+        renderer->draw_rect(graphics::Rect(10.f, 10.f));
         renderer->end_render();
     }
 }

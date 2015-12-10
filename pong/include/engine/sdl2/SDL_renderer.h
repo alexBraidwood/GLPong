@@ -7,6 +7,7 @@
 
 #include <SDL.h>
 #include "SDL_texture.h"
+#include <graphics/Rect.h>
 
 namespace engine {
 namespace sdl2 {
@@ -19,6 +20,7 @@ public:
     void start_render();
     void end_render();
     void draw_texture(const SDL_texture& texture);
+    void draw_rect(const graphics::Rect& rect);
 
     // RAII and resource management - initialization
 public:

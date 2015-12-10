@@ -7,6 +7,14 @@
 
 using namespace engine::sdl2;
 
+auto SDL_renderer::draw_rect(const graphics::Rect& rect) -> void
+{
+    SDL_Rect fillRect {
+        (int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height
+    };
+    SDL_RenderDrawRect(renderer_handle, &fillRect);
+}
+
 auto SDL_renderer::draw_texture(const SDL_texture& texture) -> void
 {
     SDL_RenderCopy(renderer_handle, texture.get(), nullptr, nullptr);

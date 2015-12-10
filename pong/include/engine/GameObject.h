@@ -5,38 +5,37 @@
 #ifndef GLPONG_GAMEOBJECT_H
 #define GLPONG_GAMEOBJECT_H
 
-#include "GameObjectBase.h"
+#include <sdl2/SDL_renderer.h>
 
 namespace engine {
 
 /**
  * /class Game_object template
- * /brief For use by game update loop, CRTP calls update on derived
+ * /brief For use by game update loop, template is mostly redundant at this point
  * /remarks Derived needs to implement draw(), drawable(), update(), and active()
  * /a TODO(Alex): Get delta_time set up and pass with update()
  */
-template<typename T>
-class Game_object : public Game_object_base {
+class Game_object {
 
 public:
-    auto do_update() -> void override
+    auto do_update() -> void
     {
         if (active()) {
             update();
         }
     }
 
-    auto do_draw() -> void override
+    auto do_draw(const sdl2::SDL_renderer& renderer) -> void
     {
         if (drawable()) {
-            draw();
+            draw(renderer);
         }
     }
 
 protected:
     virtual auto drawable() const -> bool = 0;
     virtual auto active() const -> bool = 0;
-    virtual auto draw() -> void = 0;
+    virtual auto draw(const sdl2::SDL_renderer& renderer) -> void = 0;
     virtual auto update() -> void = 0;
 };
 

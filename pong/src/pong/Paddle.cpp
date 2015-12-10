@@ -31,7 +31,7 @@ auto Paddle::drawable(bool value) -> void
     is_drawn = value;
 }
 
-auto Paddle::draw() -> void
+auto Paddle::draw(const engine::sdl2::SDL_renderer& renderer) -> void
 {
 
 }
