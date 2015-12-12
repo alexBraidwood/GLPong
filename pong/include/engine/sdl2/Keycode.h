@@ -23,7 +23,11 @@ enum class Keycode {
     Percent = SDLK_PERCENT,
     Dollar = SDLK_DOLLAR,
     Ampersand = SDLK_AMPERSAND,
-    Quote = SDLK_QUOTE
+    Quote = SDLK_QUOTE,
+    W = SDLK_w,
+    S = SDLK_s,
+    Up = SDLK_UP,
+    Down = SDLK_DOWN
 };
 
 inline Keycode from_sdl_keycode(SDL_Keycode keycode)

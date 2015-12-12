@@ -7,7 +7,7 @@
 
 using namespace engine::sdl2;
 
-auto SDL_renderer::draw_rect(const graphics::Rect& rect) -> void
+auto SDL_renderer::draw_rect(const graphics::Rect& rect) const -> void
 {
     SDL_Rect fillRect {
         rect.x, rect.y, rect.width, rect.height
@@ -15,13 +15,14 @@ auto SDL_renderer::draw_rect(const graphics::Rect& rect) -> void
     SDL_RenderFillRect(renderer_handle, &fillRect);
 }
 
-auto SDL_renderer::draw_texture(const SDL_texture& texture) -> void
+auto SDL_renderer::draw_texture(const SDL_texture& texture) const -> void
 {
     SDL_RenderCopy(renderer_handle, texture.get(), nullptr, nullptr);
 }
 
-auto SDL_renderer::clear() -> void
+auto SDL_renderer::clear(const graphics::Color& clearColor) -> void
 {
+    set_render_color(clearColor);
     SDL_RenderClear(renderer_handle);
 }
 
@@ -30,7 +31,7 @@ auto SDL_renderer::present() -> void
     SDL_RenderPresent(renderer_handle);
 }
 
-auto SDL_renderer::set_render_color(const engine::graphics::Color& color) -> void
+auto SDL_renderer::set_render_color(const engine::graphics::Color& color) const -> void
 {
     SDL_SetRenderDrawColor(renderer_handle, color.r, color.g, color.b, color.a);
 }

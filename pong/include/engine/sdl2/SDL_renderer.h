@@ -17,11 +17,11 @@ class SDL_renderer {
 
     // Drawing code
 public:
-    void set_render_color(const engine::graphics::Color& color);
-    void clear();
+    void set_render_color(const engine::graphics::Color& color) const;
+    void clear(const engine::graphics::Color& color);
     void present();
-    void draw_texture(const SDL_texture& texture);
-    void draw_rect(const graphics::Rect& rect);
+    void draw_texture(const SDL_texture& texture) const;
+    void draw_rect(const graphics::Rect& rect) const;
 
     // RAII and resource management - initialization
 public:

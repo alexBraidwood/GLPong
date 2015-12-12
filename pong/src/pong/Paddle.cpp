@@ -4,12 +4,15 @@
 
 #include <pong/Paddle.h>
 #include <iostream>
+#include <pong/include/engine/EventHandler.h>
 
 using namespace pong;
+using namespace engine::graphics;
 
-Paddle::Paddle() :
+Paddle::Paddle(const Rect& paddle_rect) :
         is_active{true},
-        is_drawn{true} {}
+        is_drawn{true},
+        paddle_rect{paddle_rect} {}
 
 auto Paddle::active() const -> bool
 {
@@ -33,11 +36,20 @@ auto Paddle::drawable(bool value) -> void
 
 auto Paddle::draw(const engine::sdl2::SDL_renderer& renderer) -> void
 {
-
+    renderer.set_render_color(engine::graphics::Color::white());
+    renderer.draw_rect(paddle_rect);
 }
 
-auto Paddle::update() -> void
+auto Paddle::update(const engine::Event_handler& event) -> void
 {
+    if (event.last_event() == engine::sdl2::EventType::KeyPressedEvent) {
+        if (event.last_key_event() == engine::sdl2::Keycode::Up) {
+            paddle_rect.y = paddle_rect.y -= 3;
+        }
+        if (event.last_key_event() == engine::sdl2::Keycode::Down) {
+            paddle_rect.y = paddle_rect.y += 3;
+        }
+    }
 
 }
 

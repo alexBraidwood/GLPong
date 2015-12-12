@@ -15,6 +15,22 @@ struct Rect {
     Rect() : height{0}, width{0}, x{0}, y{0} {}
     Rect(int width, int height) : height{height}, width{width}, x{0}, y{0} {}
     Rect(int x, int y, int width, int height) : height{height}, width{width}, x{x}, y{y} {}
+    Rect(const Rect& other)
+        : height{other.height},
+          width{other.width},
+          x{other.x},
+          y{other.y} { }
+
+    Rect& operator=(const Rect& other)
+    {
+        if (&other != this) {
+            this->height = other.height;
+            this->width = other.width;
+            this->x = other.x;
+            this->y = other.y;
+        }
+        return *this;
+    }
 
     int height;
     int width;

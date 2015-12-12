@@ -6,6 +6,7 @@
 #define GLPONG_GAMEOBJECT_H
 
 #include <sdl2/SDL_renderer.h>
+#include <engine/EventHandler.h>
 
 namespace engine {
 
@@ -18,10 +19,10 @@ namespace engine {
 class Game_object {
 
 public:
-    auto do_update() -> void
+    auto do_update(const engine::Event_handler& handler) -> void
     {
         if (active()) {
-            update();
+            update(handler);
         }
     }
 
@@ -36,7 +37,7 @@ protected:
     virtual auto drawable() const -> bool = 0;
     virtual auto active() const -> bool = 0;
     virtual auto draw(const sdl2::SDL_renderer& renderer) -> void = 0;
-    virtual auto update() -> void = 0;
+    virtual auto update(const engine::Event_handler& event) -> void = 0;
 };
 
 }

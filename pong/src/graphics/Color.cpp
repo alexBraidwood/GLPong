@@ -25,3 +25,8 @@ auto Color::white() -> Color
 {
     return Color();
 }
+
+auto Color::black() -> Color
+{
+    return Color(0, 0, 0, 255);
+}

@@ -38,6 +38,7 @@ namespace engine {
             static Color blue();
             static Color green();
             static Color white();
+            static Color black();
         };
     }
 }

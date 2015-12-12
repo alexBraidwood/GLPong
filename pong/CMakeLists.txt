@@ -49,7 +49,7 @@ set(SOURCES
         src/engine/sdl2/SdlKeyEvent.cpp
         src/engine/sdl2/SDL_window.cpp
         src/graphics/Texture2d.cpp
-        src/engine/Eventhandler.cpp
+        src/engine/EventHandler.cpp
         src/engine/sdl2/SDL_renderer.cpp src/engine/sdl2/SDL_texture.cpp src/engine/sdl2/SDL_surface.cpp src/pong/Paddle.cpp src/graphics/Color.cpp)
 
 if (OpenGL_FOUND)
