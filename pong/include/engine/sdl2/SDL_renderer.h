@@ -7,6 +7,7 @@
 
 #include <SDL.h>
 #include "SDL_texture.h"
+#include <graphics/Color.h>
 #include <graphics/Rect.h>
 
 namespace engine {
@@ -16,9 +17,9 @@ class SDL_renderer {
 
     // Drawing code
 public:
-    void set_render_color(Uint8 r, Uint8 g, Uint8 b, Uint8 a = 255);
-    void start_render();
-    void end_render();
+    void set_render_color(const engine::graphics::Color& color);
+    void clear();
+    void present();
     void draw_texture(const SDL_texture& texture);
     void draw_rect(const graphics::Rect& rect);
 

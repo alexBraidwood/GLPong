@@ -10,7 +10,9 @@ using namespace engine;
 using namespace engine::sdl2;
 
 Game::Game()
-    : event_handler{new Event_handler}
+    : event_handler{new Event_handler},
+      screen_w{800},
+      screen_h{600}
 {
     window = SDL_window::create(800, 600);
     renderer = std::make_unique<SDL_renderer>(SDL_CreateRenderer(window->get(), -1, SDL_RENDERER_ACCELERATED));
@@ -19,14 +21,17 @@ Game::Game()
 
 auto Game::Init() -> void
 {
-    renderer->set_render_color(0xFF, 0xFF, 0xFF);
+    renderer->set_render_color(engine::graphics::Color::white());
     game_objects.push_back(std::make_unique<pong::Paddle>());
 }
 
 auto Game::Update() -> void
 {
+    using namespace engine::graphics;
+
+    renderer->clear();
+
     while (is_running) {
-        renderer->start_render();
         event_handler->handle_events();
         if (event_handler->last_event() == EventType::QuitEvent
                 || event_handler->last_key_event() == Keycode::Escape) {
@@ -37,9 +42,9 @@ auto Game::Update() -> void
             object->do_update();
             object->do_draw(*renderer);
         }
-        renderer->set_render_color(0xFF, 0xFF, 0x00, 0xFF);
-        renderer->draw_rect(graphics::Rect(10.f, 10.f));
-        renderer->end_render();
+        renderer->set_render_color(Color::red());
+        renderer->draw_rect(Rect(screen_w / 4, screen_h / 4, screen_w / 2, screen_h / 2));
+        renderer->present();
     }
 }
 

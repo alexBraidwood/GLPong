@@ -10,9 +10,9 @@ using namespace engine::sdl2;
 auto SDL_renderer::draw_rect(const graphics::Rect& rect) -> void
 {
     SDL_Rect fillRect {
-        (int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height
+        rect.x, rect.y, rect.width, rect.height
     };
-    SDL_RenderDrawRect(renderer_handle, &fillRect);
+    SDL_RenderFillRect(renderer_handle, &fillRect);
 }
 
 auto SDL_renderer::draw_texture(const SDL_texture& texture) -> void
@@ -20,19 +20,19 @@ auto SDL_renderer::draw_texture(const SDL_texture& texture) -> void
     SDL_RenderCopy(renderer_handle, texture.get(), nullptr, nullptr);
 }
 
-auto SDL_renderer::start_render() -> void
+auto SDL_renderer::clear() -> void
 {
     SDL_RenderClear(renderer_handle);
 }
 
-auto SDL_renderer::end_render() -> void
+auto SDL_renderer::present() -> void
 {
     SDL_RenderPresent(renderer_handle);
 }
 
-auto SDL_renderer::set_render_color(Uint8 r, Uint8 g, Uint8 b, Uint8 a) -> void
+auto SDL_renderer::set_render_color(const engine::graphics::Color& color) -> void
 {
-    SDL_SetRenderDrawColor(renderer_handle, r, g, b, a);
+    SDL_SetRenderDrawColor(renderer_handle, color.r, color.g, color.b, color.a);
 }
 
 SDL_renderer::SDL_renderer(SDL_Renderer* handle)

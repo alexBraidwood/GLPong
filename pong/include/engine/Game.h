@@ -35,6 +35,8 @@ private:
     std::unique_ptr<Event_handler> event_handler;
     std::vector<std::unique_ptr<Game_object>> game_objects;
     bool is_running;
+    int screen_w;
+    int screen_h;
 };
 }
 
