@@ -29,14 +29,14 @@ if (WIN32)
         set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
         link_directories(SDL2/i686-w64-mingw32/lib)
     endif(EX_PLATFORM EQUAL 64)
+
     link_directories(SOIL)
     set(LINK_OPTIONS mingw32 SDL2Main SDL2 SDL2_image)
     add_definitions(-DGLEW_STATIC)
 else()
     find_package(SDL2 REQUIRED)
     include_directories(/usr/include/SDL2)
-    link_directories(SOIL)
-    set(LINK_OPTIONS SDL2)
+    set(LINK_OPTIONS SDL2 SDL2_image)
 endif()
 
 
@@ -50,7 +50,7 @@ set(SOURCES
         src/engine/sdl2/SDL_window.cpp
         src/graphics/Texture2d.cpp
         src/engine/EventHandler.cpp
-        src/engine/sdl2/SDL_renderer.cpp src/engine/sdl2/SDL_texture.cpp src/engine/sdl2/SDL_surface.cpp src/pong/Paddle.cpp src/graphics/Color.cpp)
+        src/engine/sdl2/SDL_renderer.cpp src/engine/sdl2/SDL_texture.cpp src/engine/sdl2/SDL_surface.cpp src/pong/Paddle.cpp src/graphics/Color.cpp src/engine/sdl2/GameTimer.cpp)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})

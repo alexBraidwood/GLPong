@@ -30,7 +30,9 @@ auto Game::Init() -> void
 auto Game::Update() -> void
 {
     using namespace engine::graphics;
-
+    if (timer.stopped()) {
+        timer.start();
+    }
     while (is_running) {
         renderer->clear(graphics::Color::black());
         event_handler->handle_events();
@@ -40,11 +42,17 @@ auto Game::Update() -> void
             is_running = false;
         }
         for (auto& object : game_objects) {
-            object->do_update(*event_handler);
+            object->do_update(*event_handler, timer.delta_time());
             object->do_draw(*renderer);
         }
         renderer->present();
     }
+    timer.stop();
+}
+
+auto Game::game_timer() const -> const Game_timer&
+{
+    return timer;
 }
 
 

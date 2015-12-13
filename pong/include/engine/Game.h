@@ -12,6 +12,7 @@
 #include "Renderer.h"
 #include "sdl2/SDL_window.h"
 #include "sdl2/SDL_renderer.h"
+#include "sdl2/GameTimer.h"
 #include "EventHandler.h"
 
 namespace engine {
@@ -26,6 +27,7 @@ public:
 public:
     void Update();
     void Init();
+    const sdl2::Game_timer& game_timer() const;
 
 protected:
 
@@ -34,6 +36,8 @@ private:
     std::unique_ptr<sdl2::SDL_renderer> renderer;
     std::unique_ptr<Event_handler> event_handler;
     std::vector<std::unique_ptr<Game_object>> game_objects;
+    sdl2::Game_timer timer;
+
     bool is_running;
     int screen_w;
     int screen_h;
