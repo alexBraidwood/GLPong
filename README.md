@@ -10,6 +10,8 @@ To provide a simple, open-source, pong clone that uses OpenGL and can deploy to 
 ###[GLEW](http://glew.sourceforge.net/) ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
 ###[SOIL](http://www.lonesock.net/soil.html) (Public Domain)
 
+<img src="https://travis-ci.org/alexBraidwood/GLPong.svg?branch=master" alt="Travis CI Build Status" >
+
 # Roadmap
 
 ### Initial Features
