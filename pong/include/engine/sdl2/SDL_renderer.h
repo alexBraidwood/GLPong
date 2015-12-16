@@ -9,6 +9,7 @@
 #include "SDL_texture.h"
 #include <graphics/Color.h>
 #include <graphics/Rect.h>
+#include <graphics/Circle.h>
 
 namespace engine {
 namespace sdl2 {
@@ -22,6 +23,7 @@ public:
     void present();
     void draw_texture(const SDL_texture& texture) const;
     void draw_rect(const graphics::Rect& rect) const;
+    void draw_circle(const graphics::Circle& circle) const;
 
     // RAII and resource management - initialization
 public:

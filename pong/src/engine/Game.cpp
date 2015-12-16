@@ -37,6 +37,8 @@ auto Game::Update() -> void
         auto dt = timer.delta_time();
         renderer->clear(graphics::Color::black());
         event_handler->handle_events();
+        renderer->set_render_color(graphics::Color::white());
+        renderer->draw_circle(Circle(300.0, 300.0, 10.0));
         if (event_handler->last_event() == EventType::QuitEvent
                 || event_handler->last_key_event() == Keycode::Escape) {
             SDL_Quit();
@@ -47,6 +49,8 @@ auto Game::Update() -> void
             object->do_draw(*renderer);
         }
         renderer->present();
+
+        // We need to Delay if the framerate is ridiculous
         if (dt < (1000 / 60)) {
             SDL_Delay(int(((1000 / 60) - dt) + 0.5));
         }
