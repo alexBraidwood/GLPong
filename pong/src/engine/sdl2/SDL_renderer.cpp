@@ -25,7 +25,7 @@ auto SDL_renderer::draw_circle(const graphics::Circle& circle) const -> void
     // Using Midpoint circle algorithm
     float x = circle.radius;
     float y = 0;
-    float decisionOver2 = 0.05f - x;
+    float decisionOver2 = 1.0f - x;
 
     while (y <= x) {
         SDL_RenderDrawLine(renderer_handle, circle.x, circle.y, x + circle.x, y + circle.y);
@@ -36,11 +36,11 @@ auto SDL_renderer::draw_circle(const graphics::Circle& circle) const -> void
         SDL_RenderDrawLine(renderer_handle, circle.x, circle.y, -y + circle.x, -x + circle.y);
         SDL_RenderDrawLine(renderer_handle, circle.x, circle.y, x + circle.x, -y + circle.y);
         SDL_RenderDrawLine(renderer_handle, circle.x, circle.y, y + circle.x, -x + circle.y);
-        y += 0.001f;
+        y += 0.1f;
         if (decisionOver2 <= 0) {
             decisionOver2 += 2 * y + 1;
         } else {
-            x -= 0.001f;
+            x -= 0.1f;
             decisionOver2 += 2 * (y - x) + 1;
         }
     }
