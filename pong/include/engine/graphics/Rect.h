@@ -13,8 +13,8 @@ namespace graphics {
 
 struct Rect {
     Rect() : height{0}, width{0}, x{0}, y{0} {}
-    Rect(int width, int height) : height{height}, width{width}, x{0}, y{0} {}
-    Rect(int x, int y, int width, int height) : height{height}, width{width}, x{x}, y{y} {}
+    Rect(float width, float height) : height{height}, width{width}, x{0}, y{0} {}
+    Rect(float x, float y, float width, float height) : height{height}, width{width}, x{x}, y{y} {}
     Rect(const Rect& other)
         : height{other.height},
           width{other.width},
@@ -32,10 +32,10 @@ struct Rect {
         return *this;
     }
 
-    int height;
-    int width;
-    int x;
-    int y;
+    float height;
+    float width;
+    float x;
+    float y;
 };
 }
 }

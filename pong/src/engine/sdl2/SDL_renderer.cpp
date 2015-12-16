@@ -10,7 +10,7 @@ using namespace engine::sdl2;
 auto SDL_renderer::draw_rect(const graphics::Rect& rect) const -> void
 {
     SDL_Rect fillRect {
-        rect.x, rect.y, rect.width, rect.height
+        int(rect.x + 0.5), int(rect.y + 0.5), int(rect.width + 0.5), int(rect.height + 0.5)
     };
     SDL_RenderFillRect(renderer_handle, &fillRect);
 }

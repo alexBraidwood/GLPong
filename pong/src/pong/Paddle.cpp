@@ -40,14 +40,14 @@ auto Paddle::draw(const engine::sdl2::SDL_renderer& renderer) -> void
     renderer.draw_rect(paddle_rect);
 }
 
-auto Paddle::update(const engine::Event_handler& event, int deltaTime) -> void
+auto Paddle::update(const engine::Event_handler& event, float deltaTime) -> void
 {
     if (event.last_event() == engine::sdl2::EventType::KeyPressedEvent) {
         if (event.last_key_event() == engine::sdl2::Keycode::Up) {
-            paddle_rect.y = paddle_rect.y += deltaTime*((paddle_rect.y - 1) - paddle_rect.y);
+            paddle_rect.y += deltaTime * -300;
         }
         if (event.last_key_event() == engine::sdl2::Keycode::Down) {
-            paddle_rect.y = paddle_rect.y += deltaTime*((paddle_rect.y + 1) - paddle_rect.y);
+            paddle_rect.y += deltaTime * 300;
         }
     }
 }

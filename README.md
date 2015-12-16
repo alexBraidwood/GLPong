@@ -4,13 +4,14 @@ Pong game for getting aquainted with OpenGL, Image Loading, Physics, Input, etc.
 ## Overall Goal
 To provide a simple, open-source, pong clone that uses OpenGL and can deploy to a variety of devices
 
+## Build Status
+<img src="https://travis-ci.org/alexBraidwood/GLPong.svg?branch=master" alt="Travis CI Build Status" >
+
 # Requirements
 ###[SDL2](https://www.libsdl.org/license.php) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
 ###[SDL2_image](https://www.libsdl.org/projects/SDL_image/) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
 ###[GLEW](http://glew.sourceforge.net/) ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
 ###[SOIL](http://www.lonesock.net/soil.html) (Public Domain)
-
-<img src="https://travis-ci.org/alexBraidwood/GLPong.svg?branch=master" alt="Travis CI Build Status" >
 
 # Roadmap
 

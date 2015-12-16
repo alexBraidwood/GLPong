@@ -16,7 +16,7 @@ class Paddle : public engine::Game_object {
 
     bool active() const override;
     bool drawable() const override;
-    void update(const engine::Event_handler& event, int deltaTime) override;
+    void update(const engine::Event_handler& event, float deltaTime) override;
     void draw(const engine::sdl2::SDL_renderer& renderer) override;
 
 public:

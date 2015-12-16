@@ -5,22 +5,27 @@
 #ifndef GLPONG_GAMETIMER_H
 #define GLPONG_GAMETIMER_H
 
+#include <chrono>
+
 namespace engine {
 namespace sdl2 {
 
+using timestamp = std::chrono::time_point<std::chrono::high_resolution_clock>;
+
 struct Game_timer {
     Game_timer() :
-            is_running{false}, start_time{0} {}
+            is_running{false} {}
 
     void start();
     void stop();
-    int delta_time() const;
+    float delta_time();
     bool stopped() const;
 
 private:
     bool is_running;
-    unsigned int start_time;
-    unsigned int stop_time;
+    timestamp start_time;
+    timestamp stop_time;
+    timestamp last_dt;
 };
 
 }

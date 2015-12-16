@@ -34,6 +34,7 @@ auto Game::Update() -> void
         timer.start();
     }
     while (is_running) {
+        auto dt = timer.delta_time();
         renderer->clear(graphics::Color::black());
         event_handler->handle_events();
         if (event_handler->last_event() == EventType::QuitEvent
@@ -42,10 +43,13 @@ auto Game::Update() -> void
             is_running = false;
         }
         for (auto& object : game_objects) {
-            object->do_update(*event_handler, timer.delta_time());
+            object->do_update(*event_handler, dt);
             object->do_draw(*renderer);
         }
         renderer->present();
+        if (dt < (1000 / 60)) {
+            SDL_Delay(int(((1000 / 60) - dt) + 0.5));
+        }
     }
     timer.stop();
 }

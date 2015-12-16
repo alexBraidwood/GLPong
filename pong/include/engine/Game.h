@@ -12,7 +12,7 @@
 #include "Renderer.h"
 #include "sdl2/SDL_window.h"
 #include "sdl2/SDL_renderer.h"
-#include "sdl2/GameTimer.h"
+#include "GameTimer.h"
 #include "EventHandler.h"
 
 namespace engine {

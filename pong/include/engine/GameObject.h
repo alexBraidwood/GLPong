@@ -19,7 +19,7 @@ namespace engine {
 class Game_object {
 
 public:
-    auto do_update(const engine::Event_handler& handler, int deltaTime) -> void
+    auto do_update(const engine::Event_handler& handler, float deltaTime) -> void
     {
         if (active()) {
             update(handler, deltaTime);
@@ -37,7 +37,7 @@ protected:
     virtual auto drawable() const -> bool = 0;
     virtual auto active() const -> bool = 0;
     virtual auto draw(const sdl2::SDL_renderer& renderer) -> void = 0;
-    virtual auto update(const engine::Event_handler& event, int deltaTime) -> void = 0;
+    virtual auto update(const engine::Event_handler& event, float deltaTime) -> void = 0;
 };
 
 }
