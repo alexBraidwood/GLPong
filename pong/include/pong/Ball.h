@@ -5,8 +5,22 @@
 #ifndef GLPONG_BALL_H
 #define GLPONG_BALL_H
 
+#include <graphics/Circle.h>
+#include <GameObject.h>
+
 namespace pong {
-class Ball {
+class Ball : public engine::Game_object {
+
+  bool drawable() const override;
+  bool active() const override;
+  void draw(const engine::sdl2::SDL_renderer& renderer) override;
+  void update(const engine::Event_handler& event, float deltaTime) override;
+
+ public:
+  explicit Ball(const engine::graphics::Circle& ballCircle);
+
+ private:
+  engine::graphics::Circle sourceCircle;
 
 };
 }
