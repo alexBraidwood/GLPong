@@ -35,6 +35,7 @@ private:
     std::unique_ptr<sdl2::SDL_window> window;
     std::unique_ptr<sdl2::SDL_renderer> renderer;
     std::unique_ptr<Event_handler> event_handler;
+    // TODO(Encapsulation): Expose this through the public interface, AddObject(), RemoveObject()?
     std::vector<std::unique_ptr<Game_object>> game_objects;
     sdl2::Game_timer timer;
 

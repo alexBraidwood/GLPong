@@ -22,6 +22,7 @@ Game::Game()
 auto Game::Init() -> void
 {
     renderer->set_render_color(engine::graphics::Color::black());
+    // TODO(Architecture): I should be able to add GameObjects externally
     game_objects.push_back(std::make_unique<pong::Paddle>(
             engine::graphics::Rect((screen_w - 150), screen_h / 2, 25, 100)
     ));

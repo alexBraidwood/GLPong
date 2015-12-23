@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
-project(GLPong)
+project(GamelibTests)
 
 include_directories(include)
-
-find_package(OpenGL REQUIRED)
+include_directories(../gamelib/include)
 
 link_directories(lib/gtest)
 set(LINK_OPTIONS gmock gtest)
@@ -14,5 +13,5 @@ set(SOURCES
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_executable(engine_tests ${SOURCES})
-target_link_libraries(engine_tests ${LINK_OPTIONS})
+add_executable(gamelib_tests ${SOURCES})
+target_link_libraries(gamelib_tests ${LINK_OPTIONS})

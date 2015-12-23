@@ -25,7 +25,7 @@ auto Ball::drawable() const -> bool
 
 auto Ball::draw(const engine::sdl2::SDL_renderer &renderer) -> void
 {
-  
+  renderer.draw_circle(sourceCircle);
 }
 
 auto Ball::update(const engine::Event_handler &event, float deltaTime) -> void
