@@ -5,8 +5,6 @@
 #ifndef GLPONG_RECT_H
 #define GLPONG_RECT_H
 
-#include <GL/glew.h>
-#include <GL/gl.h>
 
 namespace engine {
 namespace graphics {

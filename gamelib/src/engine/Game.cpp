@@ -3,7 +3,7 @@
 //
 
 #include "Game.h"
-#include <pong/Paddle.h>
+#include <SDL.h>
 
 
 using namespace engine;
@@ -22,10 +22,6 @@ Game::Game()
 auto Game::Init() -> void
 {
     renderer->set_render_color(engine::graphics::Color::black());
-    // TODO(Architecture): I should be able to add GameObjects externally
-    game_objects.push_back(std::make_unique<pong::Paddle>(
-            engine::graphics::Rect((screen_w - 150), screen_h / 2, 25, 100)
-    ));
 }
 
 auto Game::Update() -> void
@@ -45,7 +41,8 @@ auto Game::Update() -> void
             SDL_Quit();
             is_running = false;
         }
-        for (auto& object : game_objects) {
+        for (auto& pair : object_map) {
+            auto& object = pair.second;
             object->do_update(*event_handler, dt);
             object->do_draw(*renderer);
         }
@@ -64,4 +61,23 @@ auto Game::game_timer() const -> const Game_timer&
     return timer;
 }
 
+auto Game::add_game_object(std::unique_ptr<Game_object> object) -> void
+{
+    object_map.insert(std::make_pair(object->get_tag(), std::move(object)));
+}
+
+auto Game::remove_game_object(const std::string tag) -> void
+{
+    object_map.erase(tag);
+}
+
+auto Game::screen_height() const -> int
+{
+    return screen_h;
+}
+
+auto Game::screen_width() const -> int
+{
+    return screen_w;
+}
 

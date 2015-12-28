@@ -5,8 +5,8 @@
 #ifndef GLPONG_BALL_H
 #define GLPONG_BALL_H
 
-#include <graphics/Circle.h>
-#include <GameObject.h>
+#include <engine/graphics/Circle.h>
+#include <engine/GameObject.h>
 
 namespace pong {
 class Ball : public engine::Game_object {
@@ -17,7 +17,7 @@ class Ball : public engine::Game_object {
   void update(const engine::Event_handler& event, float deltaTime) override;
 
  public:
-  explicit Ball(const engine::graphics::Circle& ballCircle);
+  explicit Ball(const std::string& tag, const engine::graphics::Circle& ballCircle);
 
  private:
   engine::graphics::Circle sourceCircle;

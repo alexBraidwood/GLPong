@@ -2,6 +2,7 @@
 // Created by Maddog on 12/6/2015.
 //
 
+#include <SDL.h>
 #include <sdl2/SDL_texture.h>
 
 using namespace engine::sdl2;

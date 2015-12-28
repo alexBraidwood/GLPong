@@ -5,10 +5,11 @@
 #ifndef GLPONG_SDL_TEXTURE_H
 #define GLPONG_SDL_TEXTURE_H
 
-#include <SDL.h>
 #include <memory>
 #include <string>
-#include <graphics/Rect.h>
+#include <engine/graphics/Rect.h>
+
+struct SDL_Texture;
 
 namespace engine {
 namespace sdl2 {

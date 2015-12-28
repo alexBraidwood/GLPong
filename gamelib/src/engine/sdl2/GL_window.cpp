@@ -2,6 +2,7 @@
 // Created by alz12_000 on 6/30/2015.
 //
 
+#include <SDL.h>
 #include "sdl2/GL_window.h"
 
 using namespace engine::sdl2;

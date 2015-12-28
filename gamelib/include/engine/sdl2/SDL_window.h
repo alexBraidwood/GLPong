@@ -5,8 +5,9 @@
 #ifndef ENGINE_SDL2_SDLWINDOW
 #define ENGINE_SDL2_SDLWINDOW
 
-#include <SDL.h>
 #include <memory>
+
+struct SDL_Window;
 
 namespace engine {
 namespace sdl2 {

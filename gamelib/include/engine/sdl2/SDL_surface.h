@@ -5,7 +5,7 @@
 #ifndef GLPONG_SDL_SURFACE_H
 #define GLPONG_SDL_SURFACE_H
 
-#include <SDL.h>
+struct SDL_Surface;
 
 namespace engine {
 namespace sdl2 {

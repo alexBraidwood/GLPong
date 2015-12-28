@@ -6,13 +6,14 @@
 #define ENGINE_SDL2_GLWINDOW
 
 #include "SdlKeyEvent.h"
-#include "sdl2/SDL_window.h"
 #include "Renderer.h"
+#include "sdl2/SDL_window.h"
 #include "Keycode.h"
 
 #include <memory>
-#include <SDL.h>
-#include <SDL_opengl.h>
+
+typedef void* SDL_GLContext;
+
 
 namespace engine {
 namespace sdl2 {

@@ -34,6 +34,12 @@ gen
 *.out
 *.app
 
+# Program Output Folders
+Debug
+Release
+RelWithDebInfo
+MinSizeRel
+
 # CMake
 CMakeCache.txt
 CMakeFiles

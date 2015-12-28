@@ -2,6 +2,7 @@
 // Created by batty-alex on 12/6/15.
 //
 
+#include <SDL.h>
 #include <sdl2/SDL_surface.h>
 
 using namespace engine::sdl2;

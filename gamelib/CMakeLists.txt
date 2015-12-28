@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(Gamelib)
+project(common)
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     message("64 bit compiler")
@@ -11,7 +11,7 @@ else(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(EX_PLATFORM_NAME "x86")
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${Gamelib_SOURCE_DIR}/gamelib/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${common_SOURCE_DIR}/gamelib/cmake")
 
 include_directories(include)
 include_directories(include/engine)
@@ -22,21 +22,18 @@ find_package(OpenGL REQUIRED)
 if (WIN32)
     if(EX_PLATFORM EQUAL 64)
         include_directories(SDL2/x86_64-w64-mingw32/include/SDL2)
-        link_directories(SDL2/x86_64-w64-mingw32/lib)
+        link_directories(gamelib/SDL2/x86_64-w64-mingw32/lib)
         set(BINARIES SDL2/x86_64-w64-mingw32/bin/SDL2.dll)
     else(EX_PLATFORM EQUAL 64)
         include_directories(SDL2/i686-w64-mingw32/include/SDL2)
+        link_directories(gamelib/SDL2/i686-w64-mingw32/lib)
         set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
-        link_directories(SDL2/i686-w64-mingw32/lib)
     endif(EX_PLATFORM EQUAL 64)
 
-    link_directories(SOIL)
     set(LINK_OPTIONS mingw32 SDL2Main SDL2 SDL2_image)
-    add_definitions(-DGLEW_STATIC)
+
 else()
-    find_package(SDL2 REQUIRED)
     include_directories(/usr/include/SDL2)
-    set(LINK_OPTIONS SDL2 SDL2_image)
 endif()
 
 set(HEADERS)
@@ -60,6 +57,7 @@ if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
 endif(OpenGL_FOUND)
 
+file(MAKE_DIRECTORY ../lib)
 file(MAKE_DIRECTORY Shaders)
 
 file(COPY
@@ -67,16 +65,13 @@ file(COPY
         Shaders/fragment_shader.glsl
 DESTINATION Shaders)
 
-file(COPY
-${BINARIES}
-DESTINATION .)
-
+set(CMAKE_STATIC_LIBRARY_PREFIX "../lib/lib")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_library(Gamelib ${SOURCES})
+add_library(common ${SOURCES})
 
 if (WIN32)
-    target_link_libraries(Gamelib ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
+    target_link_libraries(common ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
 else()
-    target_link_libraries(Gamelib ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
+    target_link_libraries(common ${LINK_OPTIONS} ${OPENGL_LIBRARY} ${SDL2_LIBRARIES})
 endif()

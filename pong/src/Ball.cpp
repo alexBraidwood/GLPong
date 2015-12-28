@@ -2,14 +2,15 @@
 // Created by batty-alex on 12/21/15.
 //
 
-#include <pong/Ball.h>
+#include <Ball.h>
 
 using namespace engine::graphics;
 using namespace engine::sdl2;
 using namespace pong;
 
-Ball::Ball(const engine::graphics::Circle& ballCircle)
-  : sourceCircle{ballCircle.x, ballCircle.y, ballCircle.radius}
+Ball::Ball(const std::string& tag, const engine::graphics::Circle& ballCircle)
+  : Game_object{tag},
+    sourceCircle{ballCircle.x, ballCircle.y, ballCircle.radius}
 {
 }
 

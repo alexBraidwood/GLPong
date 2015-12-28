@@ -2,14 +2,15 @@
 // Created by Maddog on 12/9/2015.
 //
 
-#include <pong/Paddle.h>
+#include <Paddle.h>
 #include <iostream>
-#include <pong/include/engine/EventHandler.h>
+#include <engine/EventHandler.h>
 
 using namespace pong;
 using namespace engine::graphics;
 
-Paddle::Paddle(const Rect& paddle_rect) :
+Paddle::Paddle(const std::string& tag, const Rect& paddle_rect) :
+        Game_object(tag),
         is_active{true},
         is_drawn{true},
         paddle_rect{paddle_rect} {}
@@ -32,6 +33,11 @@ auto Paddle::activated(bool value) -> void
 auto Paddle::drawable(bool value) -> void
 {
     is_drawn = value;
+}
+
+auto Paddle::init() const -> void
+{
+
 }
 
 auto Paddle::draw(const engine::sdl2::SDL_renderer& renderer) -> void

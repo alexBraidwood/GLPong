@@ -2,6 +2,7 @@
 // Created by Maddog on 10/4/2015.
 //
 
+#include <SDL.h>
 #include "sdl2/SDL_window.h"
 #include <iostream>
 #include <stdexcept>

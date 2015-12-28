@@ -5,11 +5,12 @@
 #ifndef GLPONG_SDL_RENDERER_H
 #define GLPONG_SDL_RENDERER_H
 
-#include <SDL.h>
 #include "SDL_texture.h"
-#include <graphics/Color.h>
-#include <graphics/Rect.h>
-#include <graphics/Circle.h>
+#include <engine/graphics/Color.h>
+#include <engine/graphics/Rect.h>
+#include <engine/graphics/Circle.h>
+
+    struct SDL_Renderer;
 
 namespace engine {
 namespace sdl2 {

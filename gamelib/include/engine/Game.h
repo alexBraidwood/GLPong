@@ -5,7 +5,7 @@
 #ifndef ENGINE_GAME
 #define ENGINE_GAME
 
-#include <map>
+#include <unordered_map>
 #include <vector>
 
 #include "GameObject.h"
@@ -28,6 +28,11 @@ public:
     void Update();
     void Init();
     const sdl2::Game_timer& game_timer() const;
+    void add_game_object(std::unique_ptr<Game_object> object);
+    void remove_game_object(const std::string tag);
+
+    int screen_width() const;
+    int screen_height() const;
 
 protected:
 
@@ -35,8 +40,7 @@ private:
     std::unique_ptr<sdl2::SDL_window> window;
     std::unique_ptr<sdl2::SDL_renderer> renderer;
     std::unique_ptr<Event_handler> event_handler;
-    // TODO(Encapsulation): Expose this through the public interface, AddObject(), RemoveObject()?
-    std::vector<std::unique_ptr<Game_object>> game_objects;
+    std::unordered_map<std::string, std::unique_ptr<Game_object>> object_map;
     sdl2::Game_timer timer;
 
     bool is_running;

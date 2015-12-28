@@ -5,7 +5,7 @@
 #ifndef ENGINE_SDL2_SDLKEYEVENT
 #define ENGINE_SDL2_SDLKEYEVENT
 
-#include <sdl2/Keycode.h>
+#include <engine/sdl2/Keycode.h>
 
 namespace engine {
 namespace sdl2 {

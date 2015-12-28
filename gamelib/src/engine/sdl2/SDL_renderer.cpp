@@ -3,6 +3,7 @@
 //
 
 
+#include <SDL.h>
 #include <sdl2/SDL_renderer.h>
 
 using namespace engine::sdl2;
