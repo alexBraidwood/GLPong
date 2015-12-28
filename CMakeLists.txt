@@ -48,6 +48,8 @@ if (WIN32)
     link_directories(gamelib/SOIL)
     set(LINK_OPTIONS common pong)
     add_definitions(-DGLEW_STATIC)
+
+    file(COPY ${BINARIES} DESTINATION "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 else()
     find_package(SDL2 REQUIRED)
     include_directories(/usr/include/SDL2)
@@ -57,10 +59,6 @@ endif()
 set(SOURCE_FILES main.cpp)
 
 add_executable(Game ${SOURCE_FILES})
-
-file(COPY
-        ${BINARIES}
-        DESTINATION "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 
 if (WIN32)
     target_link_libraries(Game ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
