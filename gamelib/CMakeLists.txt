@@ -11,8 +11,6 @@ else(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(EX_PLATFORM_NAME "x86")
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${common_SOURCE_DIR}/gamelib/cmake")
-
 include_directories(include)
 include_directories(include/engine)
 include_directories(include/external)
