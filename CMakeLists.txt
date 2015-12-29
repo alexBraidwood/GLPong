@@ -31,7 +31,7 @@ link_directories(lib)
 
 # Subprojects placed here
 add_subdirectory(gamelib)
-add_subdirectory(gamelib_tests)
+#add_subdirectory(gamelib_tests)
 add_subdirectory(pong)
 
 if (WIN32)

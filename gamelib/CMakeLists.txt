@@ -17,6 +17,8 @@ include_directories(include/external)
 
 find_package(OpenGL REQUIRED)
 
+set(LINK_OPTIONS SDL2 SDL2_image)
+
 if (WIN32)
     if(EX_PLATFORM EQUAL 64)
         include_directories(SDL2/x86_64-w64-mingw32/include/SDL2)
@@ -28,10 +30,11 @@ if (WIN32)
         set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
     endif(EX_PLATFORM EQUAL 64)
 
-    set(LINK_OPTIONS mingw32 SDL2Main SDL2 SDL2_image)
+    set(LINK_OPTIONS "mingw32 SDL2Main ${LINK_OPTIONS}")
 
 else()
     include_directories(/usr/include/SDL2)
+    find_package(SDL2 REQUIRED)
 endif()
 
 set(HEADERS)
