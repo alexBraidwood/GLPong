@@ -5,7 +5,7 @@
 #ifndef ENGINE_SDL2_GLWINDOW
 #define ENGINE_SDL2_GLWINDOW
 
-#include "SdlKeyEvent.h"
+#include "sdl2/Key_event.h"
 #include "Renderer.h"
 #include "sdl2/SDL_window.h"
 #include "Keycode.h"
@@ -37,7 +37,7 @@ private:
     bool loaded_successfully;
     void create_context();
 
-    std::unique_ptr<SdlKeyEvent> key_event_listener_;
+    std::unique_ptr<Key_event> key_event_listener_;
     std::unique_ptr<SDL_window> window;
     std::unique_ptr<Renderer> renderer_;
 };

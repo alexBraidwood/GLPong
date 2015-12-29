@@ -25,8 +25,8 @@ public:
     virtual ~Game() { }
 
 public:
-    void Update();
-    void Init();
+    void update();
+    void init();
     const sdl2::Game_timer& game_timer() const;
     void add_game_object(std::unique_ptr<Game_object> object);
     void remove_game_object(const std::string tag);

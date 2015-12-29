@@ -6,7 +6,7 @@
 
 namespace engine {
 namespace sdl2 {
-enum class ListenerType {
+enum class Listener_type {
     KeyEventListener,
     WindowEventListener,
     MouseEventListener,

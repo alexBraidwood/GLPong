@@ -19,12 +19,12 @@ Game::Game()
     is_running = true;
 }
 
-auto Game::Init() -> void
+auto Game::init() -> void
 {
     renderer->set_render_color(engine::graphics::Color::black());
 }
 
-auto Game::Update() -> void
+auto Game::update() -> void
 {
     using namespace engine::graphics;
     if (timer.stopped()) {
@@ -36,7 +36,7 @@ auto Game::Update() -> void
         event_handler->handle_events();
         renderer->set_render_color(graphics::Color::white());
         renderer->draw_circle(Circle(300.0, 300.0, 10.0));
-        if (event_handler->last_event() == EventType::QuitEvent
+        if (event_handler->last_event() == Event_type::QuitEvent
                 || event_handler->last_key_event() == Keycode::Escape) {
             SDL_Quit();
             is_running = false;

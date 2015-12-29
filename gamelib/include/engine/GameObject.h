@@ -14,7 +14,6 @@ namespace engine {
  * /class Game_object template
  * /brief For use by game update loop, template is mostly redundant at this point
  * /remarks Derived needs to implement draw(), drawable(), update(), and active()
- * /a TODO(ASAP): Add do_init and init functions
  */
 class Game_object {
 

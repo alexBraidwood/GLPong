@@ -9,7 +9,7 @@
 
 namespace engine {
 namespace sdl2 {
-class SdlKeyEvent {
+class Key_event {
 public:
     Keycode last_key_pressed() const;
     Keycode last_key_released() const;

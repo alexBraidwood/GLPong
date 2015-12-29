@@ -37,14 +37,39 @@ else()
     find_package(SDL2 REQUIRED)
 endif()
 
-set(HEADERS)
+set(HEADERS
+        # Engine Core
+        include/engine/EventHandler.h
+        include/engine/Game.h
+        include/engine/GameObject.h
+        include/engine/GameTimer.h
+        include/engine/Renderer.h
+
+        # Drawing and Graphics
+        include/engine/graphics/Circle.h
+        include/engine/graphics/Color.h
+        include/engine/graphics/Rect.h
+        include/engine/graphics/Texture2d.h
+
+        # Physics (2d and 3d)
+        include/engine/physics/Collider.h
+
+        # SDL2 Wrappers
+        include/engine/sdl2/Event_type.h
+        include/engine/sdl2/Keycode.h
+        include/engine/sdl2/Listener_type.h
+        include/engine/sdl2/SDL_renderer.h
+        include/engine/sdl2/SDL_surface.h
+        include/engine/sdl2/SDL_texture.h
+        include/engine/sdl2/SDL_window.h
+        include/engine/sdl2/Key_event.h)
 
 set(SOURCES
         src/engine/Renderer.cpp
         src/engine/Game.cpp
         src/external/glew/glew.c
         src/engine/sdl2/GL_window.cpp
-        src/engine/sdl2/SdlKeyEvent.cpp
+        src/engine/sdl2/Key_event.cpp
         src/engine/sdl2/SDL_window.cpp
         src/graphics/Texture2d.cpp
         src/engine/EventHandler.cpp
@@ -69,7 +94,7 @@ DESTINATION Shaders)
 set(CMAKE_STATIC_LIBRARY_PREFIX "../lib/lib")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_library(common ${SOURCES})
+add_library(common ${SOURCES} ${HEADERS})
 
 if (WIN32)
     target_link_libraries(common ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})

@@ -48,7 +48,7 @@ auto Paddle::draw(const engine::sdl2::SDL_renderer& renderer) -> void
 
 auto Paddle::update(const engine::Event_handler& event, float deltaTime) -> void
 {
-    if (event.last_event() == engine::sdl2::EventType::KeyPressedEvent) {
+    if (event.last_event() == engine::sdl2::Event_type::KeyPressedEvent) {
         if (event.last_key_event() == engine::sdl2::Keycode::Up) {
             paddle_rect.y += deltaTime * -300;
         }

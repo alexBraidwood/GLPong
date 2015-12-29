@@ -9,7 +9,7 @@
 
 namespace engine {
 namespace sdl2 {
-enum class EventType {
+enum class Event_type {
     FirstEvent = SDL_FIRSTEVENT,
     QuitEvent = SDL_QUIT,
     AppTerminating = SDL_APP_TERMINATING,
@@ -52,9 +52,9 @@ enum class EventType {
     RenderTargetsReset = SDL_RENDER_TARGETS_RESET
 };
 
-inline EventType from_SDL_event_type(Uint32 type)
+inline Event_type from_SDL_event_type(Uint32 type)
 {
-    return static_cast<EventType>(type);
+    return static_cast<Event_type>(type);
 }
 
 }

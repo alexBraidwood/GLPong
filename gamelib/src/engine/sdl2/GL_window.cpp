@@ -10,7 +10,7 @@ using namespace engine::sdl2;
 GL_window::GL_window(std::unique_ptr<SDL_window> window_handle)
         :   window{std::move(window_handle)},
             renderer_{new Renderer},
-            key_event_listener_{new SdlKeyEvent}
+            key_event_listener_{new Key_event}
 {
     if (window) {
         create_context();

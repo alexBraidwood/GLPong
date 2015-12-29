@@ -10,8 +10,8 @@ auto main(int argc, char* argv[]) -> int
             engine::graphics::Rect((g.screen_width() - 150), g.screen_height() / 2, 25, 100)
     );
     g.add_game_object(std::move(playerOnePaddle));
-    g.Init();
-    g.Update();
+    g.init();
+    g.update();
 
     return 0;
 }
