@@ -13,6 +13,9 @@ To provide a simple, open-source, pong clone that uses OpenGL and can deploy to 
 ###[GLEW](http://glew.sourceforge.net/) ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
 ###[SOIL](http://www.lonesock.net/soil.html) (Public Domain)
 
+# Optional for test
+###[GoogleTest](https://github.com/google/googletest) ([Modified MIT] (https://github.com/google/googletest/blob/master/googletest/LICENSE) license)
+
 # Roadmap
 
 ### Initial Features
