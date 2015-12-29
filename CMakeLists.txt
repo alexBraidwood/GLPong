@@ -31,7 +31,7 @@ link_directories(lib)
 
 # Subprojects placed here
 add_subdirectory(gamelib)
-#add_subdirectory(gamelib_tests)
+add_subdirectory(gamelib_tests)
 add_subdirectory(pong)
 
 if (WIN32)
@@ -50,15 +50,16 @@ if (WIN32)
     add_definitions(-DGLEW_STATIC)
 
     file(COPY ${BINARIES} DESTINATION "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
-else()
+else(WIN32)
     find_package(SDL2 REQUIRED)
     include_directories(/usr/include/SDL2)
     set(LINK_OPTIONS common pong)
-endif()
+endif(WIN32)
 
 set(SOURCE_FILES main.cpp)
 
 add_executable(Game ${SOURCE_FILES})
+
 
 if (WIN32)
     target_link_libraries(Game ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})

@@ -17,8 +17,6 @@ include_directories(include/external)
 
 find_package(OpenGL REQUIRED)
 
-set(LINK_OPTIONS SDL2 SDL2_image)
-
 if (WIN32)
     if(EX_PLATFORM EQUAL 64)
         include_directories(SDL2/x86_64-w64-mingw32/include/SDL2)
@@ -30,39 +28,12 @@ if (WIN32)
         set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
     endif(EX_PLATFORM EQUAL 64)
 
-    set(LINK_OPTIONS "mingw32 SDL2Main ${LINK_OPTIONS}")
+    set(LINK_OPTIONS mingw32 SDL2Main SDL2 SDL2_image)
 
 else()
     include_directories(/usr/include/SDL2)
     find_package(SDL2 REQUIRED)
 endif()
-
-set(HEADERS
-        # Engine Core
-        include/engine/EventHandler.h
-        include/engine/Game.h
-        include/engine/GameObject.h
-        include/engine/GameTimer.h
-        include/engine/Renderer.h
-
-        # Drawing and Graphics
-        include/engine/graphics/Circle.h
-        include/engine/graphics/Color.h
-        include/engine/graphics/Rect.h
-        include/engine/graphics/Texture2d.h
-
-        # Physics (2d and 3d)
-        include/engine/physics/Collider.h
-
-        # SDL2 Wrappers
-        include/engine/sdl2/Event_type.h
-        include/engine/sdl2/Keycode.h
-        include/engine/sdl2/Listener_type.h
-        include/engine/sdl2/SDL_renderer.h
-        include/engine/sdl2/SDL_surface.h
-        include/engine/sdl2/SDL_texture.h
-        include/engine/sdl2/SDL_window.h
-        include/engine/sdl2/Key_event.h)
 
 set(SOURCES
         src/engine/Renderer.cpp
@@ -94,7 +65,7 @@ DESTINATION Shaders)
 set(CMAKE_STATIC_LIBRARY_PREFIX "../lib/lib")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
-add_library(common ${SOURCES} ${HEADERS})
+add_library(common ${SOURCES})
 
 if (WIN32)
     target_link_libraries(common ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})
