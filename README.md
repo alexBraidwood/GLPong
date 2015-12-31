@@ -7,9 +7,11 @@ To provide a simple, open-source, pong clone that uses OpenGL and can deploy to 
 ## Build Status
 <img src="https://travis-ci.org/alexBraidwood/GLPong.svg?branch=master" alt="Travis CI Build Status" >
 
-# Requirements
+# Requirements (Not yet included)
 ###[SDL2](https://www.libsdl.org/license.php) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
 ###[SDL2_image](https://www.libsdl.org/projects/SDL_image/) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
+
+# Requirements (Included)
 ###[GLEW](http://glew.sourceforge.net/) ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
 ###[SOIL](http://www.lonesock.net/soil.html) (Public Domain)
 ###[GLM](https://github.com/g-truc/glm) ([The Happy Bunny License](http://glm.g-truc.net/copying.txt))
