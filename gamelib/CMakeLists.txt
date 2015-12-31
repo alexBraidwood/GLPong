@@ -11,10 +11,6 @@ else(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(EX_PLATFORM_NAME "x86")
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 
-include_directories(include)
-include_directories(include/engine)
-include_directories(include/external)
-
 find_package(OpenGL REQUIRED)
 
 if (WIN32)
@@ -28,28 +24,28 @@ if (WIN32)
         set(BINARIES SDL2/i686-w64-mingw32/bin/SDL2.dll)
     endif(EX_PLATFORM EQUAL 64)
 
-    set(LINK_OPTIONS mingw32 SDL2Main SDL2 SDL2_image)
+    set(LINK_OPTIONS mingw32 SDL2Main SDL2 SDL2_image glm)
 
 else()
     include_directories(/usr/include/SDL2)
-    set(LINK_OPTIONS SDL2 SDL2_image)
+    set(LINK_OPTIONS SDL2 SDL2_image glm)
     find_package(SDL2 REQUIRED)
 endif()
 
 set(SOURCES
         src/engine/Renderer.cpp
         src/engine/Game.cpp
-        src/external/glew/glew.c
+        external/GL/glew.c
         src/engine/sdl2/GL_window.cpp
         src/engine/sdl2/Key_event.cpp
         src/engine/sdl2/SDL_window.cpp
-        src/graphics/Texture2d.cpp
+        src/engine/graphics/Texture2d.cpp
         src/engine/EventHandler.cpp
         src/engine/sdl2/SDL_renderer.cpp
         src/engine/sdl2/SDL_texture.cpp
         src/engine/sdl2/SDL_surface.cpp
-        src/graphics/Color.cpp
-        src/engine/GameTimer.cpp include/engine/physics2d/BoxCollider.h)
+        src/engine/graphics/Color.cpp
+        src/engine/GameTimer.cpp include/engine/physics2d/BoxCollider.h src/engine/physics2d/BoxCollider.cpp)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})
@@ -66,7 +62,14 @@ DESTINATION Shaders)
 set(CMAKE_STATIC_LIBRARY_PREFIX "../lib/lib")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
+add_subdirectory(external/glm)
 add_library(common ${SOURCES})
+
+target_include_directories(common PUBLIC
+        include
+        include/engine
+        external
+        external/glm)
 
 if (WIN32)
     target_link_libraries(common ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})

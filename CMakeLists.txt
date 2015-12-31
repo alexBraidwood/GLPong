@@ -22,11 +22,6 @@ set(PROJECT_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 set(GameProject_BINARY_DIR "${GameProject_Binaries}")
 
-include_directories("${PROJECT_INCLUDE_DIR}")
-include_directories("${PROJECT_SOURCE_DIR}")
-include_directories(pong/include)
-include_directories(gamelib/include)
-include_directories(gamelib/include/external)
 link_directories(lib)
 
 # Subprojects placed here
@@ -60,6 +55,11 @@ set(SOURCE_FILES main.cpp)
 
 add_executable(Game ${SOURCE_FILES})
 
+target_include_directories(Game PUBLIC
+        pong/include
+        gamelib/include
+        gamelib/external
+        gamelib/external/glm)
 
 if (WIN32)
     target_link_libraries(Game ${OPENGL_LIBRARY} ${SDL2_LIBRARIES} ${LINK_OPTIONS})

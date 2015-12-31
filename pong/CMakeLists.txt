@@ -11,9 +11,6 @@ else(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(EX_PLATFORM_NAME "x86")
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 
-include_directories(include)
-include_directories(../gamelib/include)
-
 if (WIN32)
     if(EX_PLATFORM EQUAL 64)
         include_directories(../gamelib/SDL2/x86_64-w64-mingw32/include/SDL2)
@@ -35,3 +32,9 @@ set(CMAKE_STATIC_LIBRARY_PREFIX "../lib/lib")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 add_library(pong ${SOURCES})
+
+target_include_directories(pong PUBLIC
+        include
+        ../gamelib/include
+        ../gamelib/external
+        ../gamelib/external/glm)
