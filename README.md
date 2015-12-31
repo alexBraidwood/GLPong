@@ -12,6 +12,7 @@ To provide a simple, open-source, pong clone that uses OpenGL and can deploy to 
 ###[SDL2_image](https://www.libsdl.org/projects/SDL_image/) ([zlib](http://www.gzip.org/zlib/zlib_license.html) license)
 ###[GLEW](http://glew.sourceforge.net/) ([Modified BSD](http://glew.sourceforge.net/glew.txt) license)
 ###[SOIL](http://www.lonesock.net/soil.html) (Public Domain)
+###[GLM](https://github.com/g-truc/glm) ([The Happy Bunny License](http://glm.g-truc.net/copying.txt))
 
 # Optional for test
 ###[GoogleTest](https://github.com/google/googletest) ([Modified MIT] (https://github.com/google/googletest/blob/master/googletest/LICENSE) license)
