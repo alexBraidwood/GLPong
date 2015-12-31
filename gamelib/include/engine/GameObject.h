@@ -54,7 +54,7 @@ protected:
 
 private:
     std::string tag;
-    physics2d::Collider;
+    std::unique_ptr<physics2d::Collider> collider;
 };
 
 }

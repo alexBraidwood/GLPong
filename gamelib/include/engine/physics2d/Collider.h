@@ -16,7 +16,7 @@ public:
     }
 
 protected:
-    virtual auto check_collision(const Collider& other) -> bool = 0;
+    virtual auto check_collision(const Collider& other) const -> bool = 0;
 };
 
 }

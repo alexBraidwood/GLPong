@@ -13,9 +13,9 @@ namespace physics2d {
 class BoxCollider : Collider {
 
     engine::graphics::Rect boundingRect;
-    
+
 private:
-    bool check_collision(const Collider& other);
+    bool check_collision(const Collider& other) const override;
 
 };
 }

@@ -15,7 +15,7 @@ class CircleCollider : public Collider {
     engine::graphics::Circle boundingCircle;
 
 private:
-    bool check_collision(const Collider& other);
+    bool check_collision(const Collider& other) const override;
 
 };
 }
