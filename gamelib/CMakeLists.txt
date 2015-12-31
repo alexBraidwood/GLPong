@@ -32,6 +32,7 @@ if (WIN32)
 
 else()
     include_directories(/usr/include/SDL2)
+    set(LINK_OPTIONS SDL2 SDL2_image)
     find_package(SDL2 REQUIRED)
 endif()
 
@@ -48,7 +49,7 @@ set(SOURCES
         src/engine/sdl2/SDL_texture.cpp
         src/engine/sdl2/SDL_surface.cpp
         src/graphics/Color.cpp
-        src/engine/GameTimer.cpp)
+        src/engine/GameTimer.cpp include/engine/physics2d/BoxCollider.h)
 
 if (OpenGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIR})

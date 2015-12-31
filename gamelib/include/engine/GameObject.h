@@ -7,6 +7,7 @@
 
 #include <engine/sdl2/SDL_renderer.h>
 #include <engine/EventHandler.h>
+#include <engine/physics2d/Collider.h>
 
 namespace engine {
 
@@ -53,6 +54,7 @@ protected:
 
 private:
     std::string tag;
+    physics2d::Collider;
 };
 
 }

@@ -6,7 +6,7 @@
 #define GAMELIB_COLLIDER_H
 
 namespace engine {
-namespace physics {
+namespace physics2d {
 
 class Collider {
 
@@ -21,8 +21,5 @@ protected:
 
 }
 }
-
-
-
 
 #endif
