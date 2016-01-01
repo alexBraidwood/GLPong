@@ -11,16 +11,21 @@
 namespace pong {
 class Ball : public engine::Game_object {
 
-  bool drawable() const override;
-  bool active() const override;
-  void draw(const engine::sdl2::SDL_renderer& renderer) override;
-  void update(const engine::Event_handler& event, float deltaTime) override;
+    bool drawable() const override;
 
- public:
-  explicit Ball(const std::string& tag, const engine::graphics::Circle& ballCircle);
+    bool active() const override;
 
- private:
-  engine::graphics::Circle sourceCircle;
+    void init() const override {};
+
+    void draw(const engine::sdl2::SDL_renderer& renderer) override;
+
+    void update(const engine::Event_handler& event, float deltaTime) override;
+
+public:
+    explicit Ball(const std::string& tag, const engine::graphics::Circle& ballCircle);
+
+private:
+    engine::graphics::Circle sourceCircle;
 
 };
 }

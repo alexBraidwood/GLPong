@@ -31,5 +31,6 @@ auto Ball::draw(const engine::sdl2::SDL_renderer &renderer) -> void
 
 auto Ball::update(const engine::Event_handler &event, float deltaTime) -> void
 {
-
+  this->sourceCircle.x += 1.f;
+  this->sourceCircle.y += 1.f;
 }

@@ -35,7 +35,6 @@ auto Game::update() -> void
         renderer->clear(graphics::Color::black());
         event_handler->handle_events();
         renderer->set_render_color(graphics::Color::white());
-        renderer->draw_circle(Circle(300.0, 300.0, 10.0));
         if (event_handler->last_event() == Event_type::QuitEvent
                 || event_handler->last_key_event() == Keycode::Escape) {
             SDL_Quit();
