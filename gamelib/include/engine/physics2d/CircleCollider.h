@@ -16,6 +16,7 @@ class CircleCollider : public Collider {
 
 private:
     bool check_collision(const Collider& other) const override;
+    const glm::vec3 get_collision_point(const Collider& other) const override;
 
 };
 }

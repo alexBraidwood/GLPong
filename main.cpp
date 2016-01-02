@@ -15,6 +15,7 @@ auto main(int argc, char* argv[]) -> int
             engine::graphics::Circle(g.screen_width() / 2 , g.screen_height() / 2, 10.0)
     );
 
+    ball->add_velocity(glm::vec2(1.0f, 1.0f));
     g.add_game_object(std::move(playerOnePaddle));
     g.add_game_object(std::move(ball));
     g.init();

@@ -9,28 +9,39 @@ using namespace engine::sdl2;
 using namespace pong;
 
 Ball::Ball(const std::string& tag, const engine::graphics::Circle& ballCircle)
-  : Game_object{tag},
-    sourceCircle{ballCircle.x, ballCircle.y, ballCircle.radius}
+        :Game_object{tag},
+         sourceCircle{ballCircle.x, ballCircle.y, ballCircle.radius},
+         velocity{0.f, 0.f}
 {
 }
 
 auto Ball::active() const -> bool
 {
-  return true;
+    return true;
 }
 
 auto Ball::drawable() const -> bool
 {
-  return true;
+    return true;
 }
 
-auto Ball::draw(const engine::sdl2::SDL_renderer &renderer) -> void
+auto Ball::draw(const engine::sdl2::SDL_renderer& renderer) -> void
 {
-  renderer.draw_circle(sourceCircle);
+    renderer.draw_circle(sourceCircle);
 }
 
-auto Ball::update(const engine::Event_handler &event, float deltaTime) -> void
+auto Ball::update(const engine::Event_handler& event, float deltaTime) -> void
 {
-  this->sourceCircle.x += 1.f;
-  this->sourceCircle.y += 1.f;
+    this->sourceCircle.x += velocity.x;
+    this->sourceCircle.y += velocity.y;
+}
+
+auto Ball::add_velocity(glm::vec2 velocity) -> void
+{
+    this->velocity += velocity;
+}
+
+auto Ball::get_velocity() const -> const glm::vec2&
+{
+    return this->velocity;
 }

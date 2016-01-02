@@ -7,6 +7,7 @@
 
 #include <engine/graphics/Circle.h>
 #include <engine/GameObject.h>
+#include <glm/vec2.hpp>
 
 namespace pong {
 class Ball : public engine::Game_object {
@@ -24,8 +25,12 @@ class Ball : public engine::Game_object {
 public:
     explicit Ball(const std::string& tag, const engine::graphics::Circle& ballCircle);
 
+    void add_velocity(glm::vec2 velocity);
+
+    const glm::vec2& get_velocity() const;
 private:
     engine::graphics::Circle sourceCircle;
+    glm::vec2 velocity;
 
 };
 }
